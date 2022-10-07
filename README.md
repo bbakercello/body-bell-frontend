@@ -26,6 +26,7 @@ Body-Bell Records is a suave but minimal platform and hosts data related to the 
   * User scrolls through the page and and is greeted by album art by Body Bell Artists
   * User can click on an album and it navigates to the show page where the album can be listened to and more information about the related artist 
   * User can see other albums below the artist info
+  * User can submit demos to body bell email via form for consideration as featured artist
 
   ## Contributors
   * Ben Baker - <a href="https://github.com/bbakercello">GitHub</a> - <a href="https://www.linkedin.com/in/ben-baker-cello/">LinkedIn</a>
