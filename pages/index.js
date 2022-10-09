@@ -1,13 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-export async function getStaticProps() {
-  const MONGO = await process.env.MONGODB_URI.connect({
-    
-
-  })
-  // ...
-}
 
 
 export default function Home() {
@@ -22,4 +15,14 @@ export default function Home() {
     </>
   
   )
+}
+export async function getServerSideProps(){
+  console.log(process.env.CLIENT_ID)
+
+
+  return{
+    props: {
+      hello: 'world'
+    }
+  }
 }
