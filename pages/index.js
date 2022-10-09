@@ -1,6 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
+export async function getStaticProps() {
+  const MONGO = await process.env.MONGODB_URI.connect({
+    
+
+  })
+  // ...
+}
+
+
 export default function Home() {
   return (
     <>
