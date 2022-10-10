@@ -1,12 +1,8 @@
 import React from 'react'
 
-
-
-
-
 const Spotify = (props) => {
   const RESPONSE_TYPE = 'token'
-//   console.log(props.CLIENT_ID, REDIRECT_URI,AUTH_ENDPOINT)
+  console.log(props.REDIRECT_URI)
   //Upon Login to Spotify, a token will be generated and hashed along with a token type of 'BEARER'
     return (
         <>
