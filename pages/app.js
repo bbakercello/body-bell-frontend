@@ -1,7 +1,6 @@
 //IMPORTS
 import Layout from '../components/Layout'
 import Artist_List from '../components/Artist_List';
-import '../styles/globals.css';
 import {SpotifyProvider, SpotifyContext} from '../components/Spotify';
 import { useRouter } from 'next/router';
 
@@ -18,7 +17,7 @@ function MyApp({ Component, pageProps }) {
   <Layout HEROKU={HEROKU}>
   <SpotifyProvider CLIENT_ID = {CLIENT_ID} AUTH_ENDPOINT = {AUTH_ENDPOINT} REDIRECT_URI = {REDIRECT_URI} >
     <Artist_List HEROKU={HEROKU}/>
-    {pageProps.children}
+    {/* {pageProps.children} */}
   </SpotifyProvider>
   
   </Layout>

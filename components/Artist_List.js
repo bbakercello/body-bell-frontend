@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { SpotifyContext } from './Spotify'
+import { SpotifyContext } from '../components/Spotify'
 import { useRouter } from 'next/router';
 import Link from 'next/link'
 
@@ -27,13 +27,13 @@ const Artist_List = (props) => {
             {value => 
             //write code within this function to display more components and HTML
             <>
-            {value}.value[0]
+            {/* {value}.value[0] */}
             
                 {artist.map((artist,index)=> {
                 return(
                     <div>
                         <h2>{artist.name}</h2>
-                        <Link href={`/artists/${artist._id}`}>
+                        <Link href={`/artists/${artist._id}`} key={artist._id}>
                             <a>Link</a>
                         </Link>
                     </div>
