@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { SpotifyContext } from './Spotify'
-
+import {useContext} from 'react'
 
 
 const Artist_List = (props) => {
-
     const url =`${props.HEROKU}`+ 'artists'
     console.log(url)
     
@@ -23,20 +22,24 @@ const Artist_List = (props) => {
     },[]);
     console.log(props)
     const loaded = () => {
-    
     return (
-        <div>
             <SpotifyContext.Consumer>
-            {value=>console.log({value}.value[0])  }
-            </SpotifyContext.Consumer> 
-            {artist.map((artist,index)=> {
+            {value => 
+            //write code within this function to display more components and HTML
+            <>
+            {value}.value[0]
+            
+                {artist.map((artist,index)=> {
                 return(
                     <div>{artist.name}</div>
-                    
+                        
             )})}
+            </>       
+    }
+            </SpotifyContext.Consumer> 
             
-           
-        </div>
+                
+         
     )
     }
 
