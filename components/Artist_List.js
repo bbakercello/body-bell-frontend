@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { SpotifyContext } from './Spotify'
-import {useContext} from 'react'
-
+import { useRouter } from 'next/router';
+import Link from 'next/link'
 
 const Artist_List = (props) => {
     const url =`${props.HEROKU}`+ 'artists'
-    console.log(url)
+    // console.log(url)
     
     const [artist, setArtist] = useState([])
     
@@ -20,7 +20,7 @@ const Artist_List = (props) => {
     useEffect(()=> {
         getArtists();
     },[]);
-    console.log(props)
+    // console.log(props)
     const loaded = () => {
     return (
             <SpotifyContext.Consumer>
@@ -31,8 +31,12 @@ const Artist_List = (props) => {
             
                 {artist.map((artist,index)=> {
                 return(
-                    <div>{artist.name}</div>
-                        
+                    <div>
+                        <h2>{artist.name}</h2>
+                        <Link href={`/Artist_List/${artist._id}`}>
+                            <a>Link</a>
+                        </Link>
+                    </div>
             )})}
             </>       
     }

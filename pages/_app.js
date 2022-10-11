@@ -1,11 +1,10 @@
-
+//IMPORTS
 import Layout from '../components/Layout'
-// import Spotify from '../components/Spotify'
-import Artist_List from '../components/Artist_List'
-import '../styles/globals.css'
-import {SpotifyProvider, SpotifyContext} from '../components/Spotify'
-// import token from '../components/Spotify'
-import {useState, useEffect} from 'react'
+import Artist_List from '../components/Artist_List';
+import '../styles/globals.css';
+import {SpotifyProvider, SpotifyContext} from '../components/Spotify';
+import { useRouter } from 'next/router';
+
 
 function MyApp({ Component, pageProps }) {
   const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID
