@@ -9,7 +9,7 @@ const SpotifyContext = React.createContext([{}, () => {}]);
 
 const SpotifyProvider = (props) => {
   const RESPONSE_TYPE = 'token'
-  console.log(props.REDIRECT_URI)
+  // console.log(props.REDIRECT_URI)
   //Upon Login to Spotify, a token will be generated and hashed along with a token type of 'BEARER'
   
 
@@ -19,7 +19,7 @@ const SpotifyProvider = (props) => {
   useEffect(() => {
     const hash = window.location.hash
     let token = window.localStorage.getItem('token')
-    setToken(token)
+    // setToken(token)
 
     if(!token && hash){
       //have not defined token yet, so here we will do that
@@ -31,11 +31,11 @@ const SpotifyProvider = (props) => {
       // need to grab the element in this array that starts after the 'access_token='
       //'token_type' is located at [0], need to target at [1] to get the desired string 
       token = token.find(elem => elem.startsWith('access_token')).split('=')[1]    
+      let myToken=token
+      setToken(myToken)
       
-      setToken(token)
-      
-    }setToken(token)
-    })
+    }
+    },[])
     console.log(token)
     if(token == null){
       return (

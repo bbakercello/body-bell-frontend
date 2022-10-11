@@ -33,7 +33,7 @@ const Artist_List = (props) => {
                 return(
                     <div>
                         <h2>{artist.name}</h2>
-                        <Link href={`/Artist_List/${artist._id}`}>
+                        <Link href={`/artists/${artist._id}`}>
                             <a>Link</a>
                         </Link>
                     </div>
