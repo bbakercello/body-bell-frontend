@@ -52,10 +52,10 @@ export default function Details (props) {
       // }
     });
     const record = await result.json();
-    
     setAlbum(record)
-    console.log(album)
+    
   }
+  console.log(album)
   useEffect(()=> {
     getArtist(token)
     getAlbums(token)
