@@ -3,6 +3,7 @@ import axios from 'axios'
 import { SpotifyContext } from '../components/Spotify'
 import { useRouter } from 'next/router';
 import Link from 'next/link'
+import navBar from './Nav'
 
 const Artist_List = (props) => {
     const url =`${props.HEROKU}`+ 'artists'
@@ -23,6 +24,8 @@ const Artist_List = (props) => {
     // console.log(props)
     const loaded = () => {
     return (
+            <>
+            {/* <navBar/> */}
             <SpotifyContext.Consumer>
             {value => 
             //write code within this function to display more components and HTML
@@ -40,7 +43,7 @@ const Artist_List = (props) => {
                     <div>
                         <h2>{artist.name}</h2>
                         <Link href={{pathname: `/artists/${artist._id}`, query: {data: [{value}.value[0],name, bio, instagram, spotify]}}}>
-                            <a>Link</a>
+                            <a>Links</a>
                         </Link>
                     </div>
             )})}
@@ -48,7 +51,7 @@ const Artist_List = (props) => {
     }
             </SpotifyContext.Consumer> 
             
-                
+            </>
          
     )
     }

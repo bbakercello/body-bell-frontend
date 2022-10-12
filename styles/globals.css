@@ -1,5 +1,9 @@
-html,
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .global.html,
+.global.body {
   padding: 0;
   margin: 0;
   font-family: din-2014,sans-serif;
@@ -7,21 +11,21 @@ body {
   font-style: normal;
 }
 
-a {
+.global.a {
   color: inherit;
   text-decoration: none;
 }
 
-* {
+.global{
   box-sizing: border-box;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
-  html {
+/* @media (prefers-color-scheme: dark) {
+  .global.html {
     color-scheme: dark;
   }
-  body {
+  .global.body {
     color: white;
     background: black;
   }
-}
+} */

@@ -3,6 +3,8 @@ import React from 'react';
 import {useEffect, useState} from 'react'
 import Artist_List from '../../components/Artist_List';
 import WebPlayback from '../../components/WebPlayer'
+
+import navBar from '../../components/Nav';
 export async function getServerSideProps(context) {
   // console.log(context.query)
   // params contains the post `id`.
@@ -65,6 +67,7 @@ const loaded = () => {
   
   return (
     <>
+    {/* <navBar></navBar> */}
       <h1>{name}</h1>
       <img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}></img>
       {/* <WebPlayback token={token}/> */}
