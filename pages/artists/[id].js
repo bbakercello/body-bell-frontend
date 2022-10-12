@@ -15,10 +15,13 @@ export async function getServerSideProps(context) {
 }
 export default function Details (props) {
   
-  const id = props.value.id
+  const mongoID = props.value.id
+  const name = props.value.data[1]
+  const bio = props.value.data[2]
+  const instagram = props.value.data[3]
   const token = (props.value.data[0]).substring(1).replace(",null]",'')
   console.log((props.value.data[0]).substring(1).replace(",null]",''))
-  console.log(props)
+  console.log(bio)
   
   return (
   <h1>HELLO</h1>

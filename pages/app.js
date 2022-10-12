@@ -17,10 +17,7 @@ function MyApp({ Component, pageProps }) {
   <Layout HEROKU={HEROKU}>
   <SpotifyProvider CLIENT_ID = {CLIENT_ID} AUTH_ENDPOINT = {AUTH_ENDPOINT} REDIRECT_URI = {REDIRECT_URI} >
     <Artist_List HEROKU={HEROKU}/>
-    {/* {pageProps.children} */}
-    
   </SpotifyProvider>
-  
   </Layout>
   </>
   )

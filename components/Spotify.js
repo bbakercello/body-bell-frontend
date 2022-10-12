@@ -23,7 +23,7 @@ const SpotifyProvider = (props) => {
 
     if(!token && hash){
       //have not defined token yet, so here we will do that
-      console.log('hello')
+     
       //token is in params but must be split by the '&'
       token = hash.substring(1).split('&')
       // console.log(token)
@@ -36,7 +36,7 @@ const SpotifyProvider = (props) => {
       
     }
     },[])
-    console.log(token)
+    
     if(token == null){
       return (
         <>

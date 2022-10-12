@@ -30,11 +30,15 @@ const Artist_List = (props) => {
         {value}.value[0]
             
                 {artist.map((artist,index)=> {
-                    let name = 
+                    //preparing vars to send through Link as props
+                    let name = artist.name
+                    let bio = artist.bio
+                    let instagram = artist.instagram
+                    let spotify = artist.spotifyID
                 return(
                     <div>
                         <h2>{artist.name}</h2>
-                        <Link href={{pathname: `/artists/${artist._id}`, query: {data: [{value}.value[0],{name}]}}}>
+                        <Link href={{pathname: `/artists/${artist._id}`, query: {data: [{value}.value[0],name, bio, instagram, spotify]}}}>
                             <a>Link</a>
                         </Link>
                     </div>
