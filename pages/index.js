@@ -15,15 +15,15 @@ export default function Home() {
   const HEROKU = process.env.NEXT_PUBLIC_BACKEND
  
   return (
-    <div className="bg-black">
+    <div className="bg-red-300">
     <Head>
       <title>Body Bell Records</title>
       <meta name='keywords' content='music, record label, body bell, spotify'/>
       
     </Head>
     
-    <div className="bg-black">
-      <h1>Body Bell Records</h1>
+    <div className="bg-red-300">
+      <h1 className="color-red-400">Body Bell Records</h1>
     </div>
     <div>
   <Layout HEROKU={HEROKU}>

@@ -6,6 +6,10 @@ const Comment = (props) => {
 
 const commentsSorted = props.props.reverse();
 
+
+
+
+
     return (
         <section className="collapsible">
             <Collapsible 

@@ -32,6 +32,27 @@ const NewComment = (props) => {
         catch(err){
           // console.log(err)
         }
-      }
+      
 
-      export default NewComment
+      const url = `${process.env.REACT_APP_MONGODB_URL}${props.props}/comment`
+
+  return (
+    <div className='newCommentForm'>
+      <form onSubmit={handleSubmit}>
+
+      <input
+      type="text"
+      name="post"
+      value={newComment.post}
+      onChange={handleChangeComment}
+      />
+     <input
+      type="submit"
+      name="newComment"
+       />
+      </form>
+    </div>
+  )
+}
+
+export default NewComment
