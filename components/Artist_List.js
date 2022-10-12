@@ -27,13 +27,14 @@ const Artist_List = (props) => {
             {value => 
             //write code within this function to display more components and HTML
             <>
-            {/* {value}.value[0] */}
+        {value}.value[0]
             
                 {artist.map((artist,index)=> {
+                    let name = 
                 return(
                     <div>
                         <h2>{artist.name}</h2>
-                        <Link href={`/artists/${artist._id}`} key={artist._id}>
+                        <Link href={{pathname: `/artists/${artist._id}`, query: {data: [{value}.value[0],{name}]}}}>
                             <a>Link</a>
                         </Link>
                     </div>
