@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import Artist_List from '../components/Artist_List';
 import {SpotifyProvider, SpotifyContext} from '../components/Spotify';
 import { useRouter } from 'next/router';
+// import styles from '../styles/globals.css';
 
 
 function MyApp({ Component, pageProps }) {

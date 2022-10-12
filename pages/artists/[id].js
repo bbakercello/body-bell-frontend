@@ -46,11 +46,53 @@ export default function Details (props) {
 },[]);
 
 const loaded = () => {
+  
   return (
     <>
+    <h1>Spotify Web Playback SDK Quick Start</h1>
+    <button id="togglePlay">Toggle Play</button>
+
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script>
+        {window.onSpotifyWebPlaybackSDKReady = () => {
+            const player = new Spotify.Player({
+                name: 'Web Playback SDK Quick Start Player',
+                getOAuthToken: cb => { cb(token); },
+                volume: 0.5
+            });
+
+            // Ready
+            player.addListener('ready', ({ device_id }) => {
+                console.log('Ready with Device ID', device_id);
+            });
+
+            // Not Ready
+            player.addListener('not_ready', ({ device_id }) => {
+                console.log('Device ID has gone offline', device_id);
+            });
+
+            player.addListener('initialization_error', ({ message }) => {
+                console.error(message);
+            });
+
+            player.addListener('authentication_error', ({ message }) => {
+                console.error(message);
+            });
+
+            player.addListener('account_error', ({ message }) => {
+                console.error(message);
+            });
+
+            document.getElementById('togglePlay').onclick = function() {
+              player.togglePlay();
+            };
+
+            player.connect()}
+        }
+    </script>
       <h1>{name}</h1>
-  <h2>{data.images[0].url}</h2>
-    
+      <img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}></img>
+      <button id="togglePlay">Toggle Play</button>
     </>
 
   )
