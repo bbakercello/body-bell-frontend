@@ -27,7 +27,7 @@ const Artist_List = (props) => {
             {value => 
             //write code within this function to display more components and HTML
             <>
-        {value}.value[0]
+       
             
                 {artist.map((artist,index)=> {
                     //preparing vars to send through Link as props

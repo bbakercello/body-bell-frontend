@@ -19,8 +19,8 @@ const SpotifyProvider = (props) => {
   useEffect(() => {
     const hash = window.location.hash
     let token = window.localStorage.getItem('token')
-    // setToken(token)
-
+    setToken(token)
+    console.log(token)
     if(!token && hash){
       //have not defined token yet, so here we will do that
      

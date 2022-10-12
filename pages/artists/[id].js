@@ -17,6 +17,7 @@ export async function getServerSideProps(context) {
 export default function Details (props) {
   
   const [data, setData ] = useState('')
+  const [album, setAlbum] = useState('')
 
   const mongoID = props.value.id
   const name = props.value.data[1]
@@ -40,19 +41,34 @@ export default function Details (props) {
     
     setData(data)
   }
-  console.log(data)
+ 
+
+  const getAlbums = async(token) => {
+    const result = await fetch(`https://api.spotify.com/v1/artists/${spotify}/albums`, {
+      method: 'GET',
+      headers: {'Authorization': 'Bearer ' + token}
+      //   'Content-Type': 'application/json',
+      //   'Accept': 'application/json'
+      // }
+    });
+    const record = await result.json();
+    
+    setAlbum(record)
+    console.log(album)
+  }
   useEffect(()=> {
     getArtist(token)
+    getAlbums(token)
 },[]);
 
 const loaded = () => {
   
   return (
     <>
-    
       <h1>{name}</h1>
       <img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}></img>
-      <WebPlayback token={token}/>
+      {/* <WebPlayback token={token}/> */}
+
     </>
 
   )
