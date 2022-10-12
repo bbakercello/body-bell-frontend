@@ -33,6 +33,7 @@ const SpotifyProvider = (props) => {
       token = token.find(elem => elem.startsWith('access_token')).split('=')[1]    
       let myToken=token
       setToken(myToken)
+      window.localStorage.setItem("token",token)
       
     }
     },[])

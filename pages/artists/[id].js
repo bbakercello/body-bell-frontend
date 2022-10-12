@@ -1,6 +1,7 @@
 import React from 'react';
 // import Layout from '../../components/layout';
-import { useRouter } from 'next/router';
+import {useEffect} from 'react'
+import Artist_List from '../../components/Artist_List';
 
 export async function getServerSideProps(context) {
   // console.log(context.query)
@@ -19,12 +20,32 @@ export default function Details (props) {
   const name = props.value.data[1]
   const bio = props.value.data[2]
   const instagram = props.value.data[3]
-  const token = (props.value.data[0]).substring(1).replace(",null]",'')
-  console.log((props.value.data[0]).substring(1).replace(",null]",''))
-  console.log(bio)
+  const spotify = props.value.data[4]
+  const token = (props.value.data[0])
+  //.substring(1).replace(",null]",'')
+  console.log(token)
+  console.log(spotify)
   
+  const getArtist = async(token) => {
+    const result = await fetch(`https://api.spotify.com/v1/artists/${spotify}`, {
+      method: 'GET',
+      headers: {'Authorization': `Bearer${token}`}
+      //   'Content-Type': 'application/json',
+      //   'Accept': 'application/json'
+      // }
+    });
+    const data = await result.json();
+    console.log(data)
+    return(data)
+  }
+
+  useEffect(()=> {
+    getArtist(token)
+},[]);
+
+
   return (
-  <h1>HELLO</h1>
+  <h1>{name}</h1>
   )
 }
 

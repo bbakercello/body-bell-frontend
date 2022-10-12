@@ -35,6 +35,7 @@ const Artist_List = (props) => {
                     let bio = artist.bio
                     let instagram = artist.instagram
                     let spotify = artist.spotifyID
+                    // console.log(token)
                 return(
                     <div>
                         <h2>{artist.name}</h2>
