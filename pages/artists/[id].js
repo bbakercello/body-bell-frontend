@@ -1,6 +1,6 @@
 import React from 'react';
 // import Layout from '../../components/layout';
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import Artist_List from '../../components/Artist_List';
 
 export async function getServerSideProps(context) {
@@ -16,6 +16,8 @@ export async function getServerSideProps(context) {
 }
 export default function Details (props) {
   
+  const [data, setData ] = useState('')
+
   const mongoID = props.value.id
   const name = props.value.data[1]
   const bio = props.value.data[2]
@@ -29,24 +31,42 @@ export default function Details (props) {
   const getArtist = async(token) => {
     const result = await fetch(`https://api.spotify.com/v1/artists/${spotify}`, {
       method: 'GET',
-      headers: {'Authorization': `Bearer${token}`}
+      headers: {'Authorization': 'Bearer ' + token}
       //   'Content-Type': 'application/json',
       //   'Accept': 'application/json'
       // }
     });
     const data = await result.json();
-    console.log(data)
-    return(data)
+    
+    setData(data)
   }
-
+  console.log(data)
   useEffect(()=> {
     getArtist(token)
 },[]);
 
-
+const loaded = () => {
   return (
-  <h1>{name}</h1>
+    <>
+      <h1>{name}</h1>
+  <h2>{data.images[0].url}</h2>
+    
+    </>
+
   )
+
+  }
+
+
+  const loading = () => {
+    return(<h1>Loading...</h1>)
+}
+
+return data ? loaded() : loading();
+
+
+  
+
 }
 
 // export async function getStaticPaths(){

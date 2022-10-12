@@ -31,13 +31,14 @@ const SpotifyProvider = (props) => {
       // need to grab the element in this array that starts after the 'access_token='
       //'token_type' is located at [0], need to target at [1] to get the desired string 
       token = token.find(elem => elem.startsWith('access_token')).split('=')[1]    
-      let myToken=token
-      setToken(myToken)
-      window.localStorage.setItem("token",token)
+      // let myToken=token
       
+      window.localStorage.setItem("token",token)
+     
     }
+    setToken(token)
     },[])
-    
+  
     if(token == null){
       return (
         <>
