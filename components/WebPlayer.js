@@ -63,6 +63,7 @@ function WebPlayback(props) {
             player.connect();
 
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (!is_active) { 

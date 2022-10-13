@@ -20,6 +20,7 @@ const Artist_List = (props) => {
             
     useEffect(()=> {
         getArtists();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     // console.log(props)
     const loaded = () => {

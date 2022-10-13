@@ -84,11 +84,11 @@ export default function Details (props) {
       }
     
   useEffect(()=> {
-    //eslint-disable-next-line react-hooks/exhaustive-deps
     getArtist(token)
     getAlbums(token)
     getMessages()
-},[token]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
 
 
 const loaded = () => {
