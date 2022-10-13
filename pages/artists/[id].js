@@ -5,7 +5,7 @@ import Message from '../../components/Message'
 import New_Message from '../../components/New_Message';
 import Image from 'next/image'
 
-import Nav from '../../components/Nav';
+// import Nav from '../../components/Nav';
 
 
 export async function getServerSideProps(context) {
