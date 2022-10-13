@@ -5,7 +5,7 @@ import Artist_List from '../../components/Artist_List';
 import WebPlayback from '../../components/WebPlayer'
 const HEROKU = process.env.NEXT_PUBLIC_BACKEND
 import Message from '../../components/Message'
-import NewMessage from '../../components/NewComment';
+import New_Message from '../../components/New_Message';
 // `${props.HEROKU}`+ 'artists'
 
 import navBar from '../../components/Nav';
@@ -80,12 +80,11 @@ const loaded = () => {
   
   return (
     <>
-    {/* <navBar></navBar> */}
       <h1>{name}</h1>
       <img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}></img>
       {/* <WebPlayback token={token}/> */}
       <Message message={message} id={mongoID} getArtist={getArtist}/>
-      <NewMessage id={mongoID} getArtist={getArtist}/>
+      <New_Message id={mongoID} getArtist={getArtist}/>
     </>
 
   )
