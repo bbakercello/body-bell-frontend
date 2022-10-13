@@ -4,6 +4,13 @@ const HEROKU = process.env.NEXT_PUBLIC_BACKEND
 import Message from '../../components/Message'
 import New_Message from '../../components/New_Message';
 import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { f16d } from '@fortawesome/free-solid-svg-icons'
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {faInstagram} from "@fortawesome/free-brands-svg-icons"
+import Link from 'next/link';
+
+
 
 // import Nav from '../../components/Nav';
 
@@ -110,7 +117,7 @@ const loaded = () => {
       {/* <WebPlayback token={token}/> */}
       <Message deleteMessage={actuallyDeleteMessage} message={message} artist={artist} id={mongoID} />
       <New_Message id={mongoID} artist={artist} />
-      <a href={instagram}><FontAwesomeIcon icon="fa-brands fa-instagram" /></a>
+      <Link href={instagram}><a><FontAwesomeIcon icon={faInstagram} /></a></Link>
     </>
 
   )
