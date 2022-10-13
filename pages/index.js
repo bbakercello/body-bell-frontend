@@ -23,14 +23,14 @@ export default function Home() {
     <div >
       <Nav/>
       <div className='grid grid-cols-4'>
-        <h1 className='grid col-start-2 col-span-2 leading-normal text-2xl py-8'>BODY BELL RECORDS</h1>
+        <h1 className='place-content-center grid col-start-2 col-span-2 leading-normal text-4xl py-8 underline underline-offset-8'>BODY BELL RECORDS</h1>
       </div>
       
     </div>
     <div>
   <Layout >
   <SpotifyProvider HEROKU={HEROKU} CLIENT_ID = {CLIENT_ID} AUTH_ENDPOINT = {AUTH_ENDPOINT} REDIRECT_URI = {REDIRECT_URI} >
-    <Artist_List HEROKU={HEROKU} className="bg-black"/>
+    <Artist_List HEROKU={HEROKU} className="bg-black "/>
   </SpotifyProvider>
   </Layout>
   </div>

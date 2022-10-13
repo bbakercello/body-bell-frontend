@@ -111,10 +111,13 @@ const loaded = () => {
 
   return (
     <>
-    <div className='flex h-full bg-slate-400'>
+    <div className='flex h-full bg-slate-400 '>
     <Layout >
-      <h1 className= "font-body">{name}</h1>
+      <div className='place-content-center'>
+      <h1 className= "font-body text-2xl ">{name}</h1>
+      </div>
       <img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}/>
+      
       {/* <WebPlayback token={token}/> */}
       <Link  href={instagram}><a className='text-2xl m-3'><FontAwesomeIcon icon={faInstagram} /></a></Link>
       <div className='border-4 border-indigo-500/50 pt-3'>
@@ -123,7 +126,7 @@ const loaded = () => {
       <New_Message id={mongoID} artist={artist} />
       </Layout>
       <div className='content-center'>
-     
+  
       </div>
     </div>
     </>

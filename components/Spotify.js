@@ -47,7 +47,7 @@ const SpotifyProvider = (props) => {
     if(token == ''){
       return (
         <>
-        <a href={`${props.AUTH_ENDPOINT}?client_id=${props.CLIENT_ID}&redirect_uri=${props.REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
+        <a className='p-2 bg-sky-500/100 rounded-md' href={`${props.AUTH_ENDPOINT}?client_id=${props.CLIENT_ID}&redirect_uri=${props.REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
                   Spotify Login
         </a>
         <button onClick={logout}>Logout</button>
@@ -59,7 +59,9 @@ const SpotifyProvider = (props) => {
             <SpotifyContext.Provider value={[token,setToken]}>
             <>
                 {props.children}
-                <button onClick={logout}>Logout</button>
+                <div className='pt-10'>
+                <button className='p-2 bg-sky-500/100 rounded-md'onClick={logout}>Logout</button>
+                </div>
             </>
             </SpotifyContext.Provider>
         </>
