@@ -37,7 +37,7 @@ export default function Details (props) {
   const instagram = props.value.data[3]
   const spotify = props.value.data[4]
   const token = (props.value.data[0])
- 
+  
   
   const getArtist = async(token) => {
     const result = await fetch(`https://api.spotify.com/v1/artists/${spotify}`, {
@@ -67,24 +67,42 @@ export default function Details (props) {
       setMessage(data)
   }
 
-
-
-  console.log(message)
+    
+  
+    const actuallyDeleteMessage = async (e) => {
+        e.preventDefault()
+        const url =`https://body-bell-records.herokuapp.com/messages/`+`${e.target.id}`
+    
+        try{
+          console.log(e.target.id)
+          const deleteThis = await fetch(url,{
+            method: 'DELETE'
+          })
+          const deletedMessage = await deleteThis.json()
+          getMessages();
+        }
+        catch(err) {
+          console.log(err)
+        }
+      }
+    
   useEffect(()=> {
     getArtist(token)
     getAlbums(token)
     getMessages()
+    // console.log(message)
+    // console.log(mongoID)
 },[]);
 
 const loaded = () => {
-  
+  let artist = message.artist
   return (
     <>
       <h1>{name}</h1>
       <img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}></img>
       {/* <WebPlayback token={token}/> */}
-      <Message message={message} id={mongoID} getArtist={getArtist}/>
-      <New_Message id={mongoID} getArtist={getArtist}/>
+      <Message deleteMessage={actuallyDeleteMessage} message={message} getMessages={getMessages} artist={artist} id={mongoID} getArtist={getArtist}/>
+      <New_Message id={mongoID} artist={artist} getArtist={getArtist}/>
     </>
 
   )
@@ -98,38 +116,4 @@ const loaded = () => {
 
 return data ? loaded() : loading();
 
-
-  
-
 }
-
-// export async function getStaticPaths(){
-  
-//   const paths =  [
-//      { params: { id: '634428af3306ec3a2174ad26' }
-//    },
-//      {
-//        params: { id: '634428af3306ec3a2174ad27' }
-//      },
-//      { 
-//        params: {id: '634428af3306ec3a2174ad28'}
-//      }
-//    ]
-//    return { paths, fallback: false }
-//  }
-
- // This also gets called at build time
-
-
-// export default Details
-// async function getServerSideProps  (context) {
-//   console.log(context.query) 
-//   // returns { id: episode.itunes.episode, title: episode.title}
-  
-
-//   //you can make DB queries using the data in context.query
-//   return {
-//       props: { 
-//   }
-// }}
-// getServerSideProps()

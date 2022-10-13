@@ -41,7 +41,7 @@ const New_Message = (props) => {
     // }
 
   return (
-    <form action={url} method="post">
+    <form action='https://body-bell-records.herokuapp.com/messages' method="post">
       <label for="message">Message</label>
       <input
       type="text"
