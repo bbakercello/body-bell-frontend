@@ -3,6 +3,9 @@ import React from 'react';
 import {useEffect, useState} from 'react'
 import Artist_List from '../../components/Artist_List';
 import WebPlayback from '../../components/WebPlayer'
+const HEROKU = process.env.NEXT_PUBLIC_BACKEND
+
+// `${props.HEROKU}`+ 'artists'
 
 import navBar from '../../components/Nav';
 export async function getServerSideProps(context) {
@@ -21,15 +24,16 @@ export default function Details (props) {
   const [data, setData ] = useState('')
   const [album, setAlbum] = useState('')
 
+
+  //url for fetching messages
+  const url = `${HEROKU}`+ 'messages'
   const mongoID = props.value.id
   const name = props.value.data[1]
   const bio = props.value.data[2]
   const instagram = props.value.data[3]
   const spotify = props.value.data[4]
   const token = (props.value.data[0])
-  //.substring(1).replace(",null]",'')
-  console.log(token)
-  console.log(spotify)
+ 
   
   const getArtist = async(token) => {
     const result = await fetch(`https://api.spotify.com/v1/artists/${spotify}`, {
