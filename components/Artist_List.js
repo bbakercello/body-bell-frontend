@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import { SpotifyContext } from '../components/Spotify'
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import Link from 'next/link'
-import navBar from './Nav'
+// import navBar from './Nav'
 
 const Artist_List = (props) => {
     const url =`${props.HEROKU}`+ 'artists'

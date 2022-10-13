@@ -1,12 +1,9 @@
 import React from 'react';
-// import Layout from '../../components/layout';
 import {useEffect, useState} from 'react'
-import Artist_List from '../../components/Artist_List';
-import WebPlayback from '../../components/WebPlayer'
 const HEROKU = process.env.NEXT_PUBLIC_BACKEND
 import Message from '../../components/Message'
 import New_Message from '../../components/New_Message';
-// `${props.HEROKU}`+ 'artists'
+import Image from 'next/image'
 
 import navBar from '../../components/Nav';
 export async function getServerSideProps(context) {
@@ -27,7 +24,7 @@ export default function Details (props) {
   
   const [data, setData ] = useState('')
   const [album, setAlbum] = useState('')
-
+  const [message, setMessage] = useState([])
 
   //url for fetching messages
   const url = `${HEROKU}`+ 'messages'
@@ -59,7 +56,7 @@ export default function Details (props) {
     
   }
 
-  const [message, setMessage] = useState([])
+  
     
   const getMessages = async () => {
       const response = await fetch(url)
@@ -92,17 +89,25 @@ export default function Details (props) {
     getMessages()
     // console.log(message)
     // console.log(mongoID)
-},[]);
+},[token]);
+
 
 const loaded = () => {
+  console.log(data)
   let artist = message.artist
+
+//   const myLoader = ({ src, width, quality}) => {
+//   return `${data.href}/?${data.images[0].width}&q=${quality || 75}`
+// }}
+
+
   return (
     <>
       <h1>{name}</h1>
-      <img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}></img>
+      <img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}/>
       {/* <WebPlayback token={token}/> */}
-      <Message deleteMessage={actuallyDeleteMessage} message={message} getMessages={getMessages} artist={artist} id={mongoID} getArtist={getArtist}/>
-      <New_Message id={mongoID} artist={artist} getArtist={getArtist}/>
+      <Message deleteMessage={actuallyDeleteMessage} message={message} artist={artist} id={mongoID} />
+      <New_Message id={mongoID} artist={artist} />
     </>
 
   )
