@@ -2,19 +2,14 @@ import React from 'react';
 import Collapsible from 'react-collapsible';
 
 
-const Comment = (props) => {
-
-const commentsSorted = props.props.reverse();
-
-
-
+const Message = (props) => {
 
 
     return (
         <section className="collapsible">
             <Collapsible 
                 className="comment-title" 
-                trigger="View Comments"
+                trigger="View Messages"
                 triggerStyle={{
                     backgroundColor: 'rgba(55, 55, 55, 0.2)', 
                     borderRadius: "10px",
@@ -24,14 +19,13 @@ const commentsSorted = props.props.reverse();
                     fontWeight: "bold",
                 }}
             >   
-                {commentsSorted.map((comment, index)=>
-                    <span className="comment" key={index}>
-                        <div className='commentContent'>{ comment.post }</div>
-                        <div className="commentTimestamp">{ CommentTime(new Date(comment.timestamp))}</div>
+                {props.message.map((message, index)=>
+                    <span className="message" key={index}>
+                        <div className='messageContent'>{ message.message }</div>
                     </span>
                 )}
             </Collapsible>
         </section>
 )}
 
-export default Comment
+export default Message

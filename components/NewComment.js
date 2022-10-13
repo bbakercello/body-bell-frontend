@@ -1,21 +1,23 @@
 import React, { useState } from 'react'
 
-const NewComment = (props) => {
-    // console.log(props.session)
-    const [newComment, setNewComment] = useState ({
-      user: '',
-      post: ''
+const NewMessage = (props) => {
+    const HEROKU = process.env.NEXT_PUBLIC_BACKEND
+
+
+    const [newMessage, setNewMessage] = useState ({
+      message: '',
+      artist: ''
     })}
 
-    const handleChangeComment = (e) => {
-        setNewComment({...newComment, [e.target.name]: e.target.value})
+    const handleChangeMessage = (e) => {
+        setNewMessage({...newMessage, [e.target.name]: e.target.value})
       }
     
       const handleSubmit  = async (e) => {
         e.preventDefault()
         try{
-          const data = {...newComment, user: `${props.session}`, timestamp: new Date()}
-          const updateComment = await fetch(url, {
+          const data = {...newMessage, timestamp: new Date()}
+          const updateMessage = await fetch(url, {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
@@ -23,10 +25,10 @@ const NewComment = (props) => {
             }
           })
           
-          props.getPosts();
-          setNewComment({
-            user: '',
-            post: ''
+          props.getArtist();
+          setNewMessage({
+            message: '',
+            artist: ''
           })
         }
         catch(err){
@@ -34,25 +36,30 @@ const NewComment = (props) => {
         }
       
 
-      const url = `${process.env.REACT_APP_MONGODB_URL}${props.props}/comment`
+      const url = `${HEROKU}`+ 'messages'
 
   return (
-    <div className='newCommentForm'>
+    <div className='newMessageForm'>
       <form onSubmit={handleSubmit}>
 
       <input
       type="text"
       name="post"
-      value={newComment.post}
-      onChange={handleChangeComment}
+      value={newMessage.message}
+      onChange={handleChangeMessage}
+      />
+      <input
+      type="hidden"
+      name="artist"
+      value = {props.mongoId}
       />
      <input
       type="submit"
-      name="newComment"
+      name="newMessage"
        />
       </form>
     </div>
   )
 }
 
-export default NewComment
+export default NewMessage

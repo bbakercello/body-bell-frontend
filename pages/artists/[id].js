@@ -4,12 +4,13 @@ import {useEffect, useState} from 'react'
 import Artist_List from '../../components/Artist_List';
 import WebPlayback from '../../components/WebPlayer'
 const HEROKU = process.env.NEXT_PUBLIC_BACKEND
-
+import Message from '../../components/Message'
+import NewMessage from '../../components/NewComment';
 // `${props.HEROKU}`+ 'artists'
 
 import navBar from '../../components/Nav';
 export async function getServerSideProps(context) {
-  // console.log(context.query)
+
   // params contains the post `id`.
  // If the route is like /posts/1, then params.id is 1
  // const res = await fetch(`https://.../posts/${params.id}`)
@@ -19,6 +20,9 @@ export async function getServerSideProps(context) {
  return { props: 
   {value: context.query} }
 }
+
+
+// main show detail function
 export default function Details (props) {
   
   const [data, setData ] = useState('')
@@ -39,12 +43,8 @@ export default function Details (props) {
     const result = await fetch(`https://api.spotify.com/v1/artists/${spotify}`, {
       method: 'GET',
       headers: {'Authorization': 'Bearer ' + token}
-      //   'Content-Type': 'application/json',
-      //   'Accept': 'application/json'
-      // }
     });
     const data = await result.json();
-    
     setData(data)
   }
  
@@ -53,18 +53,27 @@ export default function Details (props) {
     const result = await fetch(`https://api.spotify.com/v1/artists/${spotify}/albums`, {
       method: 'GET',
       headers: {'Authorization': 'Bearer ' + token}
-      //   'Content-Type': 'application/json',
-      //   'Accept': 'application/json'
-      // }
     });
     const record = await result.json();
     setAlbum(record)
     
   }
-  console.log(album)
+
+  const [message, setMessage] = useState([])
+    
+  const getMessages = async () => {
+      const response = await fetch(url)
+      const data = await response.json();
+      setMessage(data)
+  }
+
+
+
+  console.log(message)
   useEffect(()=> {
     getArtist(token)
     getAlbums(token)
+    getMessages()
 },[]);
 
 const loaded = () => {
@@ -75,7 +84,8 @@ const loaded = () => {
       <h1>{name}</h1>
       <img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}></img>
       {/* <WebPlayback token={token}/> */}
-
+      <Message message={message} id={mongoID} getArtist={getArtist}/>
+      <NewMessage id={mongoID} getArtist={getArtist}/>
     </>
 
   )
