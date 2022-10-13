@@ -110,6 +110,7 @@ const loaded = () => {
       {/* <WebPlayback token={token}/> */}
       <Message deleteMessage={actuallyDeleteMessage} message={message} artist={artist} id={mongoID} />
       <New_Message id={mongoID} artist={artist} />
+      <a href={instagram}><FontAwesomeIcon icon="fa-brands fa-instagram" /></a>
     </>
 
   )

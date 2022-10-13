@@ -12,7 +12,7 @@ module.exports = {
       'tahiti-dark': '#0e7490',
     },
     fontFamily: {
-      'body': ['din 2014, sans-serif']
+      'body': ['DIN 2014, sans-serif']
     },
   }},
   plugins: [],

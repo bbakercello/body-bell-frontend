@@ -15,15 +15,15 @@ export default function Home() {
   return (
     <div className="bg-tahiti" >
     <Head>
-      <title>Body Bell Records</title>
+      <title>BODY BELL RECORDS</title>
       <meta name='keywords' content='music, record label, body bell, spotify'/>
-      
+      <script src="https://kit.fontawesome.com/405f0091f4.js" crossorigin="anonymous"></script>
     </Head>
     
     <div >
       <Nav/>
       <div className='grid grid-cols-4'>
-        <h1 className='grid col-start-2 col-span-2'>Body Bell Records</h1>
+        <h1 className='grid col-start-2 col-span-2 leading-normal text-2xl py-8'>BODY BELL RECORDS</h1>
       </div>
       
     </div>
