@@ -5,7 +5,9 @@ import Message from '../../components/Message'
 import New_Message from '../../components/New_Message';
 import Image from 'next/image'
 
-import NavBar from '../../components/Nav';
+import Navbar from '../../components/Nav';
+
+
 export async function getServerSideProps(context) {
 
   // params contains the post `id`.
