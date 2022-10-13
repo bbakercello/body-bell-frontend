@@ -1,7 +1,7 @@
 import Layout from '../components/Layout'
 import Artist_List from '../components/Artist_List';
 import {SpotifyProvider, SpotifyContext} from '../components/Spotify';
-import Nav from '../components/Nav'
+import Nav from '../components/Nav.js'
 import Head from 'next/head'
 
 
