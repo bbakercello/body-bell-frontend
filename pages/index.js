@@ -23,7 +23,10 @@ export default function Home() {
     
     <div >
       <Navbar></Navbar>
-      <h1 className= "font-body">Body Bell Records</h1>
+      <div className='grid grid-cols-4'>
+        <h1 className='grid col-start-2 col-span-2'>Body Bell Records</h1>
+      </div>
+      
     </div>
     <div>
   <Layout >
