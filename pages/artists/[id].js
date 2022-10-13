@@ -5,7 +5,7 @@ import Message from '../../components/Message'
 import New_Message from '../../components/New_Message';
 import Image from 'next/image'
 
-import navBar from '../../components/Nav';
+import NavBar from '../../components/Nav';
 export async function getServerSideProps(context) {
 
   // params contains the post `id`.
@@ -84,11 +84,10 @@ export default function Details (props) {
       }
     
   useEffect(()=> {
+    //eslint-disable-next-line react-hooks/exhaustive-deps
     getArtist(token)
     getAlbums(token)
     getMessages()
-    // console.log(message)
-    // console.log(mongoID)
 },[token]);
 
 
