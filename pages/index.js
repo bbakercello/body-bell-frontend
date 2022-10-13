@@ -2,7 +2,7 @@ import Layout from '../components/Layout'
 import Artist_List from '../components/Artist_List';
 import {SpotifyProvider, SpotifyContext} from '../components/Spotify';
 // import { useRouter } from 'next/router';
-import Navbar from '../components/Nav'
+import Nav from '../components/Nav'
 import Head from 'next/head'
 // import styles from '../styles/globals.css'
 
@@ -22,7 +22,7 @@ export default function Home() {
     </Head>
     
     <div >
-      <Navbar></Navbar>
+      <Nav></Nav>
       <div className='grid grid-cols-4'>
         <h1 className='grid col-start-2 col-span-2'>Body Bell Records</h1>
       </div>
