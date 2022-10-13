@@ -6,7 +6,6 @@ import Navbar from '../components/Nav'
 import Head from 'next/head'
 // import styles from '../styles/globals.css'
 
-
 export default function Home() {
   //IMPORTS
   const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID
@@ -15,7 +14,7 @@ export default function Home() {
   const HEROKU = process.env.NEXT_PUBLIC_BACKEND
  
   return (
-    <div className="bg-tahiti">
+    <div className="bg-tahiti" >
     <Head>
       <title>Body Bell Records</title>
       <meta name='keywords' content='music, record label, body bell, spotify'/>
@@ -23,12 +22,12 @@ export default function Home() {
     </Head>
     
     <div >
-      <h1 >Body Bell Records</h1>
+      <Navbar></Navbar>
+      <h1 className= "font-body">Body Bell Records</h1>
     </div>
     <div>
-  <Layout HEROKU={HEROKU}>
-  <Navbar/>
-  <SpotifyProvider CLIENT_ID = {CLIENT_ID} AUTH_ENDPOINT = {AUTH_ENDPOINT} REDIRECT_URI = {REDIRECT_URI} >
+  <Layout >
+  <SpotifyProvider HEROKU={HEROKU} CLIENT_ID = {CLIENT_ID} AUTH_ENDPOINT = {AUTH_ENDPOINT} REDIRECT_URI = {REDIRECT_URI} >
     <Artist_List HEROKU={HEROKU} className="bg-black"/>
   </SpotifyProvider>
   </Layout>

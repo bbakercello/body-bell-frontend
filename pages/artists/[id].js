@@ -103,7 +103,8 @@ const loaded = () => {
 
   return (
     <>
-      <h1>{name}</h1>
+    
+      <h1 className= "font-body">{name}</h1>
       <img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}/>
       {/* <WebPlayback token={token}/> */}
       <Message deleteMessage={actuallyDeleteMessage} message={message} artist={artist} id={mongoID} />

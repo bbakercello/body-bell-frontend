@@ -40,7 +40,7 @@ const Artist_List = (props) => {
                     let spotify = artist.spotifyID
                     // console.log(token)
                 return(
-                    <div>
+                    <div key={index}>
                         <h2>{artist.name}</h2>
                         <Link href={{pathname: `/artists/${artist._id}`, query: {data: [{value}.value[0],name, bio, instagram, spotify]}}}>
                             <a>Links</a>

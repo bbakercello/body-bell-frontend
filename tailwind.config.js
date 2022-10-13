@@ -11,8 +11,10 @@ module.exports = {
       'DEFAULT': '#06b6d4',
       'tahiti-dark': '#0e7490',
     },
+    fontFamily: {
+      'body': ['din 2014, sans-serif']
+    },
   }},
-  extend: {},
   plugins: [],
 }
 
