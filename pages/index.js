@@ -10,7 +10,7 @@ export default function Home() {
   const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID
   const AUTH_ENDPOINT = process.env.NEXT_PUBLIC_AUTH_ENDPOINT
   const REDIRECT_URI = process.env.NEXT_PUBLIC_REDIRECT_URI
-  const HEROKU = process.env.NEXT_PUBLIC_BACKEND
+  const HEROKU = 'https://body-bell-records.herokuapp.com/'
  
   return (
     <>
