@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
 import Collapsible from 'react-collapsible'
+import {useRouter} from 'next/router'
 
 
 const New_Message = (props) => {
+
+  const router = useRouter();
+  const [route,setRoute] = useState()
+
   const mongoId = props.id
   const HEROKU = process.env.NEXT_PUBLIC_BACKEND
 
   const url = `${HEROKU}`+ 'messages'
 
-  const handleSubmit = (e)=> {
-    
-  }
+
   
   return (
-    <form action='https://body-bell-records.herokuapp.com/messages' method="post" onSubmit={handleSubmit}>
+    <form action='https://body-bell-records.herokuapp.com/messages' method="post" >
       <label  htmlFor="message">Message</label>
       <input className='p-3'
       type="text"
