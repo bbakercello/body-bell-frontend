@@ -3,7 +3,7 @@ import Artist_List from '../components/Artist_List';
 import {SpotifyProvider, SpotifyContext} from '../components/Spotify';
 import Logo from '../components/Logo.js'
 import Head from 'next/head'
-import Nav from '../components/Nav.js'
+import Top_Nav from '../components/Top_Nav';
 
 export default function Home() {
   //IMPORTS
@@ -14,7 +14,7 @@ export default function Home() {
  
   return (
     <>
-    <Nav />
+    <Top_Nav />
     <div className="bg-tahiti" >
     <Head>
       <title>BODY BELL RECORDS</title>

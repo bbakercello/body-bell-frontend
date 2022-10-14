@@ -50,7 +50,7 @@ const SpotifyProvider = (props) => {
         <a className='p-2 bg-sky-500/100 rounded-md' href={`https://accounts.spotify.com/authorize?client_id=afad3723193640e2ad7cf5e9c8bd97c6&redirect_uri=${props.REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
                   Spotify Login
         </a>
-        <button onClick={logout}>Logout</button>
+        {/* <button onClick={logout}>Logout</button> */}
         </>)
     }
     else{ 

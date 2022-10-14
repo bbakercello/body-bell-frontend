@@ -10,7 +10,7 @@ import {library} from '@fortawesome/fontawesome-svg-core'
 import {faInstagram} from "@fortawesome/free-brands-svg-icons"
 import Link from 'next/link';
 import Layout from '../../components/Layout';
-
+import Top_Nav from '../../components/Top_Nav';
 
 // import Nav from '../../components/Nav';
 
@@ -111,6 +111,7 @@ const loaded = () => {
 
   return (
     <>
+    <Top_Nav/>
     <div className='flex h-full bg-slate-400 '>
     <Layout >
       <div className='place-content-center'>
