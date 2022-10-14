@@ -1,9 +1,9 @@
 import Layout from '../components/Layout'
 import Artist_List from '../components/Artist_List';
 import {SpotifyProvider, SpotifyContext} from '../components/Spotify';
-import Nav from '../components/Nav.js'
+import Logo from '../components/Logo.js'
 import Head from 'next/head'
-
+import Nav from '../components/Nav.js'
 
 export default function Home() {
   //IMPORTS
@@ -13,15 +13,17 @@ export default function Home() {
   const HEROKU = process.env.NEXT_PUBLIC_BACKEND
  
   return (
+    <>
+    <Nav />
     <div className="bg-tahiti" >
     <Head>
       <title>BODY BELL RECORDS</title>
       <meta name='keywords' content='music, record label, body bell, spotify'/>
-      <script src="https://kit.fontawesome.com/405f0091f4.js" crossorigin="anonymous"></script>
+
     </Head>
     
     <div >
-      <Nav/>
+      <Logo/>
       <div className='grid grid-cols-4'>
         <h1 className='place-content-center grid col-start-2 col-span-2 leading-normal text-4xl py-8 underline underline-offset-8'>BODY BELL RECORDS</h1>
       </div>
@@ -35,6 +37,7 @@ export default function Home() {
   </Layout>
   </div>
   </div>
+  </>
   
   )
 }

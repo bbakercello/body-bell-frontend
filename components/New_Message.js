@@ -10,17 +10,18 @@ const New_Message = (props) => {
 
   return (
     <form action='https://body-bell-records.herokuapp.com/messages' method="post">
-      <label htmlFor="message">Message</label>
-      <input
+      <label  htmlFor="message">Message</label>
+      <input className='p-3'
       type="text"
       name="message"
       />
       <input
+      
       type="hidden"
       value={props.id}
       name="artist"
       />
-      <button type="submit">Submit</button>
+      <button className='p-3 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'type="submit">Submit</button>
     </form>
   )
 } 

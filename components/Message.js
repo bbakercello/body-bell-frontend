@@ -7,9 +7,9 @@ const Message = (props) => {
     // console.log(props.id)
     // console.log(props.actuallyDeleteMessage)
     return (
-        <section className="collapsible">
+        <section className="collapsible ">
             <Collapsible 
-                className="comment-title" 
+                className="comment-title  bg-slate-200" 
                 trigger="View Messages"
                 triggerStyle={{
                     backgroundColor: 'rgba(55, 55, 55, 0.2)', 
@@ -27,7 +27,7 @@ const Message = (props) => {
                         return(
                     
                     <span className="message" key={index}>
-                        <div className='messageContent'>{ message.message }</div>
+                        <div className='messageContent pt-3'>{ message.message }</div>
                         <input
                     type="button"
                     className='deleteMessageButton'
