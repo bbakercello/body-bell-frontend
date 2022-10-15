@@ -44,10 +44,11 @@ const SpotifyProvider = (props) => {
       window.localStorage.removeItem("token")
     }
   
-    if(token == ''){
+    if(token === ""){
+      
       return (
         <>
-        <a className='p-2 bg-sky-500/100 rounded-md' href={`https://accounts.spotify.com/authorize?client_id=afad3723193640e2ad7cf5e9c8bd97c6&redirect_uri=https://body-bell-frontend.vercel.app/&response_type=${RESPONSE_TYPE}`}>
+        <a className='p-2 bg-sky-500/100 rounded-md' href={`https://accounts.spotify.com/authorize?client_id=afad3723193640e2ad7cf5e9c8bd97c6&redirect_uri=http://localhost:3000&response_type=${RESPONSE_TYPE}`}>
                   Spotify Login
         </a>
         {/* <button onClick={logout}>Logout</button> */}
