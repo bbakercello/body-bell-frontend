@@ -10,7 +10,7 @@ import {faInstagram} from "@fortawesome/free-brands-svg-icons"
 import Link from 'next/link';
 import Layout from '../../components/Layout';
 import Top_Nav from '../../components/Top_Nav';
-import {userRouter} from 'next/router'
+import {useRouter} from 'next/router'
 
 
 
@@ -42,7 +42,7 @@ export default function Details (props) {
   const instagram = props.value.data[3]
   const spotify = props.value.data[4]
   const token = (props.value.data[0])
-  
+  // console.log(props.value)
   
   const getArtist = async(token) => {
     const result = await fetch(`https://api.spotify.com/v1/artists/${spotify}`, {
@@ -92,6 +92,7 @@ export default function Details (props) {
       }
     
   useEffect(()=> {
+  
     getArtist(token)
     getAlbums(token)
     getMessages()
@@ -101,11 +102,13 @@ export default function Details (props) {
 
 const loaded = () => {
   console.log(data)
+  if(data == undefined){
+    const router = useRouter()
+    router.back();
+  }
   let artist = message.artist
 
-  if(data.external_urls.spotify == undefined){
-    
-  }
+  
 
   return (
     <>

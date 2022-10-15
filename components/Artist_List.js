@@ -27,7 +27,8 @@ function Artist_List(props) {
                     {value =>
                         //write code within this function to display more components and HTML
                         <>
-
+                            {console.log(value[0])}
+                            
                             <div className='grid grid-flow-row auto-cols-max'>
                             {artist.map((artist, index) => {
                                 //preparing vars to send through Link as props
@@ -36,6 +37,7 @@ function Artist_List(props) {
                                 let instagram = artist.instagram
                                 let spotify = artist.spotifyID
                                 // console.log(token)
+                                {if(value[0]!= undefined){
                                 return (
                                     <div key={index} className='py-3  hover:bg-sky-100 focus:outline-none focus:ring focus:ring-sky-300 rounded-md'>
 
@@ -44,7 +46,7 @@ function Artist_List(props) {
                                         </Link>
 
                                     </div>
-                                )
+                                )}}
                             })}
                             </div>
                         </>}

@@ -70,9 +70,7 @@ const SpotifyProvider = (props) => {
     else{ 
       return(
         <>
-        <div className='flex justify-center items-center'>
-        <h3 className='text-1.5xl'>Featured Artists</h3>
-        </div>
+        
             <SpotifyContext.Provider value={[token,setToken]}>
             <>
             
