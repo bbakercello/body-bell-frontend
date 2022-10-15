@@ -12,6 +12,9 @@ const Top_Nav = () => {
     </Link>
     </div>
     <div className='bg-slate-400 h-1'>
+    <Link href={{ pathname: `/info`}}>
+        <a><h2 className='text-2xl '>About</h2></a>
+    </Link>
     </div>
     </>
   )

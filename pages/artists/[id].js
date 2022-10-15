@@ -5,14 +5,13 @@ import Message from '../../components/Message'
 import New_Message from '../../components/New_Message';
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { f16d } from '@fortawesome/free-solid-svg-icons'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faInstagram} from "@fortawesome/free-brands-svg-icons"
 import Link from 'next/link';
 import Layout from '../../components/Layout';
 import Top_Nav from '../../components/Top_Nav';
+import {userRouter} from 'next/router'
 
-// import Nav from '../../components/Nav';
 
 
 export async function getServerSideProps(context) {
@@ -104,23 +103,29 @@ const loaded = () => {
   console.log(data)
   let artist = message.artist
 
-//   const myLoader = ({ src, width, quality}) => {
-//   return `${data.href}/?${data.images[0].width}&q=${quality || 75}`
-// }}
-
+  if(data.external_urls.spotify == undefined){
+    
+  }
 
   return (
     <>
     <Top_Nav/>
-    <div className='flex h-full bg-slate-400 '>
-    <Layout >
-      <div className='place-content-center'>
-      <h1 className= "font-body text-4xl ">{name}</h1>
+    <div className='h-full bg-slate-400 place-self-center '>
+    <Layout className='place-self-center'>
+      <div className='flex flex-row place-self-center'>
+      <h1 className= "font-body text-4xl ">{name}</h1> 
+      <Link  href={instagram}><a className='text-6xl m-3'><FontAwesomeIcon icon={faInstagram} /></a></Link>
       </div>
       <a href={data.external_urls.spotify}><img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}/></a>
       
-      {/* <WebPlayback token={token}/> */}
-      <Link  href={instagram}><a className='text-6xl m-3'><FontAwesomeIcon icon={faInstagram} /></a></Link>
+      {/* 
+      
+      *future feature*
+
+      <WebPlayback token={token}/> 
+      
+      */}
+      
       <div className='border-4 border-indigo-500/10 p-4 rounded-lg'>
       <Message deleteMessage={actuallyDeleteMessage} message={message} artist={artist} id={mongoID} />
       </div>

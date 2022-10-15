@@ -23,12 +23,12 @@ function Artist_List(props) {
         return (
             <>
                 {/* <navBar/> */}
-                <SpotifyContext.Consumer>
+                <SpotifyContext.Consumer >
                     {value =>
                         //write code within this function to display more components and HTML
                         <>
 
-
+                            <div className='grid grid-flow-row auto-cols-max'>
                             {artist.map((artist, index) => {
                                 //preparing vars to send through Link as props
                                 let name = artist.name
@@ -37,15 +37,16 @@ function Artist_List(props) {
                                 let spotify = artist.spotifyID
                                 // console.log(token)
                                 return (
-                                    <div key={index} className='py-8 hover:bg-violet-1 focus:outline-none focus:ring focus:ring-violet-300'>
+                                    <div key={index} className='py-3  hover:bg-sky-100 focus:outline-none focus:ring focus:ring-sky-300 rounded-md'>
 
                                         <Link href={{ pathname: `/artists/${artist._id}`, query: { data: [{ value }.value[0], name, bio, instagram, spotify] } }}>
-                                            <a><h2 className='text-2xl'>{artist.name}</h2></a>
+                                            <a><h2 className='text-2xl '>{artist.name}</h2></a>
                                         </Link>
 
                                     </div>
                                 )
                             })}
+                            </div>
                         </>}
                 </SpotifyContext.Consumer>
 
