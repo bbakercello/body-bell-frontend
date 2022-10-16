@@ -100,11 +100,6 @@ export default function Details (props) {
 
 
 const loaded = () => {
-  console.log(data)
-  if(data == undefined){
-    const router = useRouter()
-    router.back();
-  }
   let artist = message.artist
 
   
