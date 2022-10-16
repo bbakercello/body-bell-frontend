@@ -9,6 +9,12 @@ font-weight: 400;
 font-style: normal;
 }
 
+p {
+    font-family: din-2014 Narrow Extra Light , sans-serif;
+    font-style: normal;
+    font-weight: 100
+}
+
 label {
     padding: 5px;
 }

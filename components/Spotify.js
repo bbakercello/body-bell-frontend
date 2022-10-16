@@ -55,9 +55,11 @@ const SpotifyProvider = (props) => {
 
         <Link href={{ pathname: `/info`}}>
         <a className=''>
-    
+        <div>
         <div className='pt-10 hover:bg-sky-100 focus:outline-none focus:ring focus:ring-sky-300 rounded-md'>
+          
         <p >No Spotify? No Problem!</p>
+        </div>
         <div className='flex justify-center items-center pt-2 '>
         <FontAwesomeIcon icon={faComputerMouse} />
         </div>
@@ -76,7 +78,7 @@ const SpotifyProvider = (props) => {
             
                 {props.children}
                 <div className='pt-10'>
-                <button className='p-2 bg-sky-500/100 rounded-md'onClick={logout}>Logout</button>
+                <button className='p-2 bg-sky-500/100 rounded-md'onClick={logout}>Enter</button>
                 </div>
             </>
             </SpotifyContext.Provider>

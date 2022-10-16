@@ -2,7 +2,13 @@ import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {faWpexplorer} from "@fortawesome/free-brands-svg-icons"
 
+
+
+//useState array for Listbox
 const page = [
   {id: 1, name: 'Home', pathname: '/', unavailable: false},
   {id: 2, name: 'About', pathname: '/info', unavailable: false}
@@ -19,7 +25,7 @@ const Top_Nav = () => {
     <div className='pr-4 '>
       <div className='flex flex-row'>
     <Listbox value={selectedPage} onChange={setSelectedPage}>
-      <Listbox.Button className='pt-3 '>Explore</Listbox.Button>
+      <Listbox.Button className='pt-4  text-lg'>Explore <FontAwesomeIcon icon={faWpexplorer} /></Listbox.Button>
       <Transition
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
@@ -28,13 +34,13 @@ const Top_Nav = () => {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-      <Listbox.Options className='pl-2'>
+      <Listbox.Options className='pl-2 pt-1 '>
         {page.map((page) => (
           <Listbox.Option 
             key={page.id}
             value={page}
             disabled={page.unavailable}
-            className='pt-1'
+            className='pt-1 bg-slate-200 hover:bg-slate-300 rounded-lg'
           >
             <Link  href={{pathname: page.pathname}}><a >{page.name}</a></Link>
           </Listbox.Option>
@@ -63,6 +69,7 @@ const Top_Nav = () => {
 
     
     </div>
+    <div className='bg-slate-900 h-0.5'></div>
     </>
   )
 }

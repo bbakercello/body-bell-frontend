@@ -3,7 +3,6 @@ import {useEffect, useState} from 'react'
 const HEROKU = process.env.NEXT_PUBLIC_BACKEND
 import Message from '../../components/Message'
 import New_Message from '../../components/New_Message';
-import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faInstagram} from "@fortawesome/free-brands-svg-icons"
