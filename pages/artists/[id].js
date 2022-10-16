@@ -119,7 +119,7 @@ const loaded = () => {
       <h1 className= "font-body text-4xl ">{name}</h1> 
       <Link  href={instagram}><a className='text-6xl m-3'><FontAwesomeIcon icon={faInstagram} /></a></Link>
       </div>
-      <a href={data.external_urls.spotify}><img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}/></a>
+      <a className='drop-shadow-lg pb-3'href={data.external_urls.spotify}><img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}/></a>
       
       {/* 
       
