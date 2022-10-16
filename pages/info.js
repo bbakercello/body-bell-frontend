@@ -1,8 +1,9 @@
 import React from 'react'
 import Top_Nav from '../components/Top_Nav'
 import Layout from '../components/Layout'
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faInstagram} from "@fortawesome/free-brands-svg-icons"
+import Link from 'next/link'
 
 const info = () => {
   return (
@@ -10,7 +11,7 @@ const info = () => {
       <Top_Nav/>
         <div className="bg-tahiti" >
         <Layout >
-        <div className='flex flex-col pr-8 pl-8'>
+        <div className='flex flex-col pr-8 pl-8 bg-slate-100 rounded-lg'>
           <h1 className='self-center leading-normal text-4xl py-8 underline underline-offset-8'> About Us</h1>
           <div className='font-paragraph'>
           <p>During the late 1980s, ambient music occupied a complex place in the musical landscape. The genre is mature enough to stand on its own – see, for example, the catalog of Venture Records, a division of Virgin Records that specialises in ambient and electronic music by artists such as Hans-Joachim Roedelius (cluster), Holger Czukay (Can) and David Sylvian (Japan) - but it likely exists as part of a wider aesthetic taste. Elements of ambient music combined with minimalism, systems, and pop emerged in the indie music scene, for example through the neo-romantic aesthetic of label 4AD and the reverb dream pop of groups such as Dif Juz, This Mortal Coil, and the Cocteau Twins (The latter even teamed up with environmental legend Harold Budd).</p>
@@ -24,8 +25,13 @@ const info = () => {
 
           <p>Bell Records is an American record company founded in Boston in 1952 by Nick Stevens,  as a unit of Isn't It Fun LLC, after acquiring the rights to the Benny Bell name, Benny Bell used the Bell - Name sets records for bold novelty. </p>
           <br></br>
-
+          <div>
           <p>Body Bell Records is looking for more passionate artists who have something to say with the art they make. Want to get in touch with us?</p>
+          <div className='flex justify-center'>
+      
+          <Link  href='https://www.instagram.com/popsicle_hunters/'><a className='flex justify-center w-8 bg-slate-200 hover:bg-slate-300 rounded-lg text-2xl m-3'><FontAwesomeIcon icon={faInstagram} className='pt-3 pb-2 '/></a></Link>
+          </div>
+          </div>
           </div>
         </Layout>
         </div>

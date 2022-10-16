@@ -5,7 +5,7 @@ import { Listbox, Transition } from '@headlessui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faWpexplorer} from "@fortawesome/free-brands-svg-icons"
-
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 
 //useState array for Listbox
@@ -21,7 +21,10 @@ const Top_Nav = () => {
     <>
     
     <div className='bg-slate-50 flex justify-between '>
+      <div className='flex'>
     <img className='w-16 rounded-full drop-shadow-lg p-1' src='https://i.imgur.com/hdOhoXL.jpg' alt="Logo"></img>
+    <Link  href='https://www.instagram.com/popsicle_hunters/'><a className='flex justify-center w-8 bg-slate-200 hover:bg-slate-300 rounded-lg text-2xl m-3'><FontAwesomeIcon icon={faInstagram} className='pt-3 pb-2 '/></a></Link>
+    </div>
     <div className='pr-4 '>
       <div className='flex flex-row'>
     <Listbox value={selectedPage} onChange={setSelectedPage}>
