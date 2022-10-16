@@ -2,8 +2,9 @@ import React from 'react'
 
 import {useState} from 'react'
 import {useEffect} from 'react'
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComputerMouse } from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
 const SpotifyContext = React.createContext([{}, () => {}]);
 
 
@@ -20,7 +21,7 @@ const SpotifyProvider = (props) => {
     const hash = window.location.hash
     let token = window.localStorage.getItem('token')
     setToken(token)
-    console.log(token)
+
     if(!token && hash){
       //have not defined token yet, so here we will do that
      
@@ -44,23 +45,40 @@ const SpotifyProvider = (props) => {
       window.localStorage.removeItem("token")
     }
   
-    if(token == ''){
+    if(token === ""){
+      
       return (
         <>
-        <a className='p-2 bg-sky-500/100 rounded-md' href={`https://accounts.spotify.com/authorize?client_id=afad3723193640e2ad7cf5e9c8bd97c6&redirect_uri=https://body-bell-frontend.vercel.app/&response_type=${RESPONSE_TYPE}`}>
+        <a className='p-2 bg-sky-500/100 rounded-md' href={`https://accounts.spotify.com/authorize?client_id=afad3723193640e2ad7cf5e9c8bd97c6&redirect_uri=http://localhost:3000&response_type=${RESPONSE_TYPE}`}>
                   Spotify Login
         </a>
+
+        <Link href={{ pathname: `/info`}}>
+        <a className=''>
+        <div>
+        <div className='pt-10 hover:bg-sky-100 focus:outline-none focus:ring focus:ring-sky-300 rounded-md'>
+          
+        <p >No Spotify? No Problem!</p>
+        </div>
+        <div className='flex justify-center items-center pt-2 '>
+        <FontAwesomeIcon icon={faComputerMouse} />
+        </div>
+        </div>
+        </a>
+        </Link>
         {/* <button onClick={logout}>Logout</button> */}
         </>)
     }
     else{ 
       return(
         <>
+        
             <SpotifyContext.Provider value={[token,setToken]}>
             <>
+            
                 {props.children}
                 <div className='pt-10'>
-                <button className='p-2 bg-sky-500/100 rounded-md'onClick={logout}>Logout</button>
+                <button className='p-2 bg-sky-500/100 rounded-md'onClick={logout}>Enter</button>
                 </div>
             </>
             </SpotifyContext.Provider>

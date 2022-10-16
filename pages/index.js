@@ -21,15 +21,18 @@ export default function Home() {
       <meta name='keywords' content='music, record label, body bell, spotify'/>
 
     </Head>
-    
-    <div >
-      <Logo/>
-      <div className='grid grid-cols-4'>
-        <h1 className='place-content-center grid col-start-2 col-span-2 leading-normal text-4xl py-8 underline underline-offset-8'>BODY BELL RECORDS</h1>
+   
+    <div>
+      
+        <Logo/>
+  
+      <div className='grid items-center justify-center'>
+        <h1 className='leading-normal text-4xl py-8 underline underline-offset-8'>BODY BELL RECORDS</h1>
       </div>
       
     </div>
     <div>
+
   <Layout >
   <SpotifyProvider HEROKU={HEROKU} CLIENT_ID = {CLIENT_ID} AUTH_ENDPOINT = {AUTH_ENDPOINT} REDIRECT_URI = {REDIRECT_URI} >
     <Artist_List HEROKU={HEROKU} className="bg-black "/>
