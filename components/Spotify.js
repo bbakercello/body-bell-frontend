@@ -49,15 +49,15 @@ const SpotifyProvider = (props) => {
       
       return (
         <>
-        <a className='p-2 bg-sky-500/100 rounded-md' href={`https://accounts.spotify.com/authorize?client_id=afad3723193640e2ad7cf5e9c8bd97c6&redirect_uri=https://body-bell-frontend.vercel.app/&response_type=${RESPONSE_TYPE}`}>
+        <a className='p-2 bg-sky-500/100 rounded-md' href={`${process.env.AUTH_ENDPOINT}?client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
                   Spotify Login
         </a>
         <Link href={{ pathname: `/info`}}>
         <a className=''>
         <div>
-        <div className='pt-10 hover:bg-sky-100 focus:outline-none focus:ring focus:ring-sky-300 rounded-md'>
+        <div className='pt-10'>
           
-        <p >No Spotify? No Problem!</p>
+        <p className='hover:bg-sky-100 focus:outline-none focus:ring focus:ring-sky-300 rounded-md'>No Spotify? No Problem!</p>
         </div>
         <div className='flex justify-center items-center pt-2 '>
         <FontAwesomeIcon icon={faComputerMouse} />

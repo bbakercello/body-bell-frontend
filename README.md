@@ -16,6 +16,7 @@ Body-Bell Records is a suave but minimal platform and hosts data related to the 
   * Spotify API and Authentication
   * Tailwind CSS
   * Headless UI
+  * Deployed on Vercel
   
   ## Screenshots
    <details>
