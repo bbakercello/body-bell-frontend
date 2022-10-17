@@ -28,24 +28,24 @@ Body-Bell Records is a suave but minimal platform and hosts data related to the 
    </details>
    <details>
   <summary>Homepage</summary>
- <img src="[https://i.imgur.com/qbWEIz5.png](https://i.imgur.com/YSsMSLw.png](https://i.imgur.com/YSsMSLw.png)" alt="BodyBell Screenshot 03" style="width: 600px; padding: 20px" />
+ <img src="https://i.imgur.com/YSsMSLw.png" alt="BodyBell Screenshot 03" style="width: 600px; padding: 20px" />
    </details>
   
   <details>
   <summary>Show Artist Page</summary>
- <img src="[[https://i.imgur.com/qbWEIz5.png](https://i.imgur.com/YSsMSLw.png](https://i.imgur.com/LzOdnNN.png)](https://i.imgur.com/LzOdnNN.png)" alt="BodyBell Screenshot 04" style="width: 600px; padding: 20px" />
+ <img src="https://i.imgur.com/LzOdnNN.png" alt="BodyBell Screenshot 04" style="width: 600px; padding: 20px" />
    </details>
    
    # Code of Interest
    
    <details>
   <summary>Dynamic Routing / Passing Props Via Routes</summary>
- <img src="[[[https://i.imgur.com/qbWEIz5.png](https://i.imgur.com/YSsMSLw.png](https://i.imgur.com/LzOdnNN.png)](https://i.imgur.com/LzOdnNN.png)](https://i.imgur.com/QRF0xLe.png)" alt="BodyBell Screenshot 05" style="width: 600px; padding: 20px" />
+ <img src="https://i.imgur.com/QRF0xLe.png" alt="BodyBell Screenshot 05" style="width: 600px; padding: 20px" />
    </details>
    
    <details>
   <summary>Spotify Authentication</summary>
- <img src="[[[[https://i.imgur.com/qbWEIz5.png](https://i.imgur.com/YSsMSLw.png](https://i.imgur.com/LzOdnNN.png)](https://i.imgur.com/LzOdnNN.png)](https://i.imgur.com/QRF0xLe.png)](https://i.imgur.com/Uaz2qjW.png)" alt="BodyBell Screenshot 06" style="width: 600px; padding: 20px" />
+ <img src="https://i.imgur.com/Uaz2qjW.png" alt="BodyBell Screenshot 06" style="width: 600px; padding: 20px" />
    </details>
  
  
