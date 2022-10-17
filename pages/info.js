@@ -29,7 +29,7 @@ const info = () => {
           <p>Body Bell Records is looking for more passionate artists who have something to say with the art they make. Want to get in touch with us?</p>
           <div className='flex justify-center'>
       
-          <Link  href='https://www.instagram.com/popsicle_hunters/'><a className='flex justify-center w-8 bg-slate-200 hover:bg-slate-300 rounded-lg text-2xl m-3'><FontAwesomeIcon icon={faInstagram} className='pt-3 pb-2 '/></a></Link>
+          <Link  href='https://www.instagram.com/bodybellrecords/'><a className='flex justify-center w-8 bg-slate-200 hover:bg-slate-300 rounded-lg text-2xl m-3'><FontAwesomeIcon icon={faInstagram} className='pt-3 pb-2 '/></a></Link>
           </div>
           </div>
           </div>
