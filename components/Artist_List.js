@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { SpotifyContext } from '../components/Spotify'
 import Link from 'next/link'
+import Email from './Email'
+// import sendEmail from {emailJS}
 
 function Artist_List(props) {
     const url = `${props.HEROKU}` + 'artists'
@@ -51,7 +53,7 @@ function Artist_List(props) {
                             </div>
                         </>}
                 </SpotifyContext.Consumer>
-
+                <Email/>
             </>
 
         )
