@@ -123,8 +123,12 @@ const loaded = () => {
 
           return(
             <div>
-              <h3></h3>
+              <h3>{album.name}</h3>
               <img src={album.images[2].url} alt='Album'/>
+              <span>{album.release_date}</span>
+              <ul>
+               
+              </ul>
             </div>
           )
         }
@@ -146,6 +150,6 @@ const loaded = () => {
     return(<h1>Loading...</h1>)
 }
 
-return data ? loaded() : loading();
+return data && album ? loaded() : loading();
 
 }
