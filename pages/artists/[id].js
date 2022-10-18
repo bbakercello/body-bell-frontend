@@ -60,7 +60,6 @@ export default function Details (props) {
     });
     const record = await result.json();
     setAlbum(record)
-    
   }
 
   
@@ -101,8 +100,7 @@ export default function Details (props) {
 
 const loaded = () => {
   let artist = message.artist
-
-  
+  console.log(album)
 
   return (
     <>
@@ -114,25 +112,29 @@ const loaded = () => {
       <Link  href={instagram}><a className='text-3xl m-3 place-self-center'><FontAwesomeIcon icon={faInstagram} /></a></Link>
       </div>
       <a className='drop-shadow-lg pb-3'href={data.external_urls.spotify}><img src={data.images[0].url} alt="Album Cover" width={data.images[0].width} height={data.images[0].height}/></a>
-      
-      {/* 
-      
-      *future feature*
-
-      <WebPlayback token={token}/> 
-      
-      */}
-      
       <div className='border-4 border-indigo-500/10 p-4 rounded-lg'>
       <Message deleteMessage={actuallyDeleteMessage} message={message} artist={artist} id={mongoID} />
       </div>
       <div className='pt-3'>
       <New_Message  id={mongoID} artist={artist} />
       </div>
+      <div>
+        {album.items.map((album, index) => { 
+
+          return(
+            <div>
+              <h3></h3>
+              <img src={album.images[2].url} alt='Album'/>
+            </div>
+          )
+        }
+        )}
+      </div>
       </Layout>
       <div className='content-center'>
       </div>
     </div>
+ 
     </>
 
   )

@@ -74,7 +74,6 @@ const SpotifyProvider = (props) => {
         
             <SpotifyContext.Provider value={[token,setToken]}>
             <>
-            
                 {props.children}
                 <div className='pt-10'>
                 <button className='p-2 bg-sky-500/100 rounded-md'onClick={logout}>Enter</button>

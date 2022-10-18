@@ -20,7 +20,7 @@ const Top_Nav = () => {
   return (
     <>
     
-    <div className='bg-slate-50 flex justify-between '>
+    <div className='bg-slate-50 flex justify-between'>
       <div className='flex'>
     <img className='w-16 rounded-full drop-shadow-lg p-1' src='https://i.imgur.com/hdOhoXL.jpg' alt="Logo"></img>
     <Link  href='https://www.instagram.com/bodybellrecords/'><a className='flex justify-center w-8 bg-slate-200 hover:bg-slate-300 rounded-lg text-2xl m-3'><FontAwesomeIcon icon={faInstagram} className='pt-3 pb-2 '/></a></Link>
@@ -28,7 +28,7 @@ const Top_Nav = () => {
     <div className='pr-4 '>
       <div className='flex flex-row'>
     <Listbox value={selectedPage} onChange={setSelectedPage}>
-      <Listbox.Button className='pt-4  text-lg'>Explore <FontAwesomeIcon icon={faWpexplorer} /></Listbox.Button>
+      <Listbox.Button className='pt-4  text-xl'>Explore <FontAwesomeIcon icon={faWpexplorer} /></Listbox.Button>
       <Transition
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
@@ -52,25 +52,7 @@ const Top_Nav = () => {
       </Transition>
     </Listbox>
     </div>
-    </div>
-  
-
-    {/* <div className='h-12 underline underline-offset-1 underline pr-8'>
-    <Link href= '/'>
-    <a><h2 className='text-2xl '>Home</h2></a>
-    </Link>
-    </div>
-    <div className='h-1'>
-    <Link href={{ pathname: `/info`}}>
-        <a><h2 className='text-2xl underline underline-offset-1 underline pr-6'>About</h2></a>
-    </Link>
-    </div> */}
-    
-
-
-
-
-    
+    </div>    
     </div>
     <div className='bg-slate-900 h-0.5'></div>
     </>
