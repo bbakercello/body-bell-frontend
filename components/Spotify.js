@@ -75,8 +75,14 @@ const SpotifyProvider = (props) => {
             <SpotifyContext.Provider value={[token,setToken]}>
             <>
                 {props.children}
-                <div className='pt-10'>
-                <button className='p-2 bg-sky-500/100 rounded-md'onClick={logout}>Enter</button>
+                <div className='pt-10 flex flex-col'>
+                  <div className='flex justify-center'>
+                <button className='justify-center w-40 p-2 bg-sky-500/100 rounded-md'onClick={logout}>Enter</button>
+                  </div>
+                <div className='grid grid-rows-3 grid-col-3'>
+                  <img className='w-60 rounded-lg row-start-1 col-start-1 row-span-3 col-span-3'src='https://i.imgur.com/q7hWwpw.jpg'></img>
+                  <img className='w-2 rounded-full row-start-3 col-start-2 pt-5'src='https://i.imgur.com/rWidBII.jpg'></img>
+                </div>
                 </div>
             </>
             </SpotifyContext.Provider>
