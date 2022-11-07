@@ -40,7 +40,6 @@ function Artist_List(props) {
                                 {if(value[0]!= undefined){
                                 return (
                                     <div key={index} className='py-3  hover:bg-sky-100 focus:outline-none focus:ring focus:ring-sky-300 rounded-md'>
-
                                         <Link href={{ pathname: `/artists/${artist._id}`, query: { data: [{ value }.value[0], name, bio, instagram, spotify] } }}>
                                             <a><h2 className='text-2xl '>{artist.name}</h2></a>
                                         </Link>

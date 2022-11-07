@@ -5,6 +5,7 @@ import {useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComputerMouse } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 const SpotifyContext = React.createContext([{}, () => {}]);
 
 
@@ -77,15 +78,31 @@ const SpotifyProvider = (props) => {
                 {props.children}
                 <div className='pt-10 flex flex-col'>
                   <div className='flex justify-center'>
-                <button className='justify-center w-40 p-2 bg-sky-500/100 rounded-md'onClick={logout}>Enter</button>
                   </div>
-                <div className='grid grid-rows-3 grid-col-3'>
-                  <img className='w-60 rounded-lg row-start-1 col-start-1 row-span-3 col-span-3'src='https://i.imgur.com/q7hWwpw.jpg'></img>
-                  <img className='w-2 rounded-full row-start-3 col-start-2 pt-5'src='https://i.imgur.com/rWidBII.jpg'></img>
+                <div className='grid grid-rows-3 grid-col'>
+                  <img className='outline-double drop-shadow-xl w-60 rounded-lg row-start-1 col-start-1 row-span-3 col-span-3'src='https://i.imgur.com/q7hWwpw.jpg'></img>
+                  <div 
+                    
+                    className='row-start-2 col-start-2 pt-6 flex flex-col mt-16'>
+                  <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }} 
+                  >
+                  <button className='justify-center w-40 rounded-md pb-3'onClick={logout}>Enter</button>
+                  </motion.div>
+                  <motion.div animate={{ rotate: 360 }}
+                    whileHover={{ scale: 1.2}}
+                    whileTap={{ scale: 0.9 }} 
+                    transition={{ type: 'spring' }}
+                    className='self-center pt-4' >
+                  <img className='w-5 rounded-full blur 'src='https://i.imgur.com/rWidBII.jpg'></img>
+                  </motion.div>
+                  </div>
                 </div>
                 </div>
             </>
             </SpotifyContext.Provider>
+  
         </>
 )}
     

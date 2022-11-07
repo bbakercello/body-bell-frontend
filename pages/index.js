@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
     <Top_Nav />
-    <div className="bg-gradient-to-b from-tahiti via-sky-300 to-tahiti" >
+    <div className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900" >
     <Head>
       <title>BODY BELL RECORDS</title>
       <meta name='keywords' content='music, record label, body bell, spotify'/>
@@ -24,11 +24,9 @@ export default function Home() {
     <div>
         <Logo/>
       <div className='grid items-center justify-center'>
-        <h1 className='leading-normal text-4xl py-8 underline underline-offset-8'>BODY BELL RECORDS</h1>
-        <span></span>
+        <h1 className='leading-normal text-4xl text-sky-600 py-8 underline underline-offset-8'>BODY BELL RECORDS</h1>
       </div>
     </div>
-
     <div>
     <Layout >
         <SpotifyProvider HEROKU={HEROKU} CLIENT_ID = {CLIENT_ID} AUTH_ENDPOINT = {AUTH_ENDPOINT} REDIRECT_URI = {REDIRECT_URI} >
