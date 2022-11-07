@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
     <Top_Nav />
-    <div className="bg-tahiti" >
+    <div className="bg-gradient-to-b from-tahiti via-sky-300 to-tahiti" >
     <Head>
       <title>BODY BELL RECORDS</title>
       <meta name='keywords' content='music, record label, body bell, spotify'/>

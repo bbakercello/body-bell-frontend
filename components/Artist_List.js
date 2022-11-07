@@ -29,8 +29,6 @@ function Artist_List(props) {
                     {value =>
                         //write code within this function to display more components and HTML
                         <>
-                            {console.log(value[0])}
-                            
                             <div className='grid grid-flow-row auto-cols-max'>
                             {artist.map((artist, index) => {
                                 //preparing vars to send through Link as props
