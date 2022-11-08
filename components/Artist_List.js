@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { SpotifyContext } from '../components/Spotify'
 import Link from 'next/link'
 import Email from './Email'
-// import sendEmail from {emailJS}
+import { motion } from 'framer-motion'
 
 function Artist_List(props) {
     const url = `${props.HEROKU}` + 'artists'
@@ -22,6 +22,7 @@ function Artist_List(props) {
     }, [])
     // console.log(props)
     const loaded = () => {
+
         return (
             <>
                 {/* <navBar/> */}
@@ -29,7 +30,7 @@ function Artist_List(props) {
                     {value =>
                         //write code within this function to display more components and HTML
                         <>
-                            <div className='grid grid-flow-row auto-cols-max'>
+                            <div className='flex flex-auto space-x-6'>
                             {artist.map((artist, index) => {
                                 //preparing vars to send through Link as props
                                 let name = artist.name
@@ -39,12 +40,17 @@ function Artist_List(props) {
                                 // console.log(token)
                                 {if(value[0]!= undefined){
                                 return (
-                                    <div key={index} className='py-3  hover:bg-sky-100 focus:outline-none focus:ring focus:ring-sky-300 rounded-md'>
+                                    <motion.div whileHover={{scale: 1.2}}
+                                    whileTap={{ scale: 0.8 }}
+                                    
+                                    >
+                                    <div key={index} className='py-3 rounded-md'>
+                                        
                                         <Link href={{ pathname: `/artists/${artist._id}`, query: { data: [{ value }.value[0], name, bio, instagram, spotify] } }}>
-                                            <a><h2 className='text-2xl '>{artist.name}</h2></a>
-                                        </Link>
-
+                                            <a><h2 className='text-2xl text-sky-600'> {artist.name} </h2></a>
+                                        </Link>           
                                     </div>
+                                    </motion.div>
                                 )}}
                             })}
                             </div>

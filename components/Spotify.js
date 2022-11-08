@@ -94,7 +94,8 @@ const SpotifyProvider = (props) => {
                     whileHover={{ scale: 1.2}}
                     whileTap={{ scale: 0.9 }} 
                     transition={{ type: 'spring' }}
-                    className='self-center pt-4' >
+                    className='self-center pt-4' 
+                    onClick={logout}>
                   <img className='w-5 rounded-full blur 'src='https://i.imgur.com/rWidBII.jpg'></img>
                   </motion.div>
                   </div>

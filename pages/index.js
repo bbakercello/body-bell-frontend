@@ -4,14 +4,29 @@ import {SpotifyProvider, SpotifyContext} from '../components/Spotify';
 import Logo from '../components/Logo.js'
 import Head from 'next/head'
 import Top_Nav from '../components/Top_Nav';
-
+import { motion } from 'framer-motion';
 export default function Home() {
   //IMPORTS
   const CLIENT_ID = process.env.CLIENT_ID
   const AUTH_ENDPOINT = process.env.AUTH_ENDPOINT
   const REDIRECT_URI = process.env.REDIRECT_URI
   const HEROKU = process.env.BACKEND
- 
+  
+  const draw = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: (i) => {
+      const delay = 1 + i * 0.5;
+      return {
+        pathLength: 1,
+        opacity: 1,
+        transition: {
+          pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
+          opacity: { delay, duration: 0.01 }
+        }
+      };
+    }
+  };
+
   return (
     <>
     <Top_Nav />
@@ -23,8 +38,25 @@ export default function Home() {
    
     <div>
         <Logo/>
-      <div className='grid items-center justify-center'>
-        <h1 className='leading-normal text-4xl text-sky-600 py-8 underline underline-offset-8'>BODY BELL RECORDS</h1>
+      <div className='grid justify-center'>
+        <h1 className='self-center text-4xl text-sky-600 pt-8'>BODY BELL RECORDS</h1>
+        <motion.svg
+          width="600"
+          height="600"
+          viewBox="0 0 600 600"
+          initial="hidden"
+          animate="visible"
+         >
+        <motion.line
+        x1="0"
+        y1="0"
+        x2="300"
+        y2="0"
+        stroke="#ffffff"
+        variants={draw}
+        custom={2}
+      />
+      </motion.svg>
       </div>
     </div>
     <div>

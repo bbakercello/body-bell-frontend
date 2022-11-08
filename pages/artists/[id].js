@@ -123,19 +123,7 @@ const loaded = () => {
       <div>
         {album.items.map((album, index) => { 
            //set up state and function for fetching album tracks once album and artist data have been fetched
-          const [track, setTrack] = useState('')
-
-          const getTracks = async(token) => {
-          const result = await fetch(`https://api.spotify.com/v1/artists/${spotify}/albums/${album.id}/tracks`, {
-            method: 'GET',
-            headers: {'Athorization': 'Bearer ' + token}
-          })
-          const track = await result.json()
-          setTrack(track)
-        }
-          getTracks()
-
-          if(track){
+          {
           return(
             <div>
               <h3>{album.name}</h3>
