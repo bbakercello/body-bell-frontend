@@ -15,6 +15,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.3",
+    "@reduxjs/toolkit": "^1.9.0",
     "@sendgrid/mail": "^7.7.0",
     "axios": "^1.1.2",
     "babel-plugin-macros": "^3.1.0",
@@ -22,9 +23,11 @@
     "emailjs": "^4.0.1",
     "framer-motion": "^7.6.5",
     "next": "12.3.1",
+    "next-redux-wrapper": "^8.0.0",
     "react": "18.2.0",
     "react-collapsible": "^2.10.0",
     "react-dom": "18.2.0",
+    "react-redux": "^8.0.5",
     "sendemail": "^4.0.3"
   },
   "devDependencies": {

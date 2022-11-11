@@ -94,7 +94,7 @@ export default function Details (props) {
     getArtist(token)
     getAlbums(token)
     getMessages()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    console.log(token)
   },[]);
 
 
@@ -120,14 +120,18 @@ const loaded = () => {
       <div className='pt-3'>
       <New_Message  id={mongoID} artist={artist} />
       </div>
+      
+      <div>
+        <h2 className='mt-6 text-3xl'>Albums</h2>
+      </div>
       <div>
         {album.items.map((album, index) => { 
            //set up state and function for fetching album tracks once album and artist data have been fetched
           {
           return(
-            <div>
-              <h3>{album.name}</h3>
-              <img src={album.images[2].url} alt='Album'/>
+            <div className='flex flex-col'>
+              <h3 className='pt-4 font-bold text-xl flex justify-center'><a href={album.uri}>{album.name}</a></h3>
+              <img className='pt-3'src={album.images[1].url} alt='Album'/>
               <span>{album.release_date}</span>
               <ul>
                

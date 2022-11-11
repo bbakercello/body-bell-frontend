@@ -2,8 +2,6 @@ import React from 'react'
 
 import {useState} from 'react'
 import {useEffect} from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComputerMouse } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 const SpotifyContext = React.createContext([{}, () => {}]);
@@ -50,22 +48,32 @@ const SpotifyProvider = (props) => {
       
       return (
         <>
-        <a className='p-2 bg-sky-500/100 rounded-md' href={`${process.env.AUTH_ENDPOINT}?client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
+        <motion.a
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.8 }}
+        >
+        <Link className='p-2 bg-sky-500/100 rounded-md' href={{ pathname:`${process.env.AUTH_ENDPOINT}?client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URI}&response_type=${RESPONSE_TYPE}`,query: { data: [token] }}}>
                   Spotify Login
-        </a>
+        </Link>
+        </motion.a>
+        
+        <motion.div
+         whileHover={{ scale: 1.2 }}
+         whileTap={{ scale: 0.8 }}
+         >
         <Link href={{ pathname: `/info`}}>
         <a className=''>
         <div>
         <div className='pt-10'>
           
-        <p className='hover:bg-sky-100 focus:outline-none focus:ring focus:ring-sky-300 rounded-md'>No Spotify? No Problem!</p>
+        <p className='p-2 bg-sky-500/100 rounded-md focus:outline-none focus:ring focus:ring-sky-300 rounded-md'>Learn More</p>
         </div>
         <div className='flex justify-center items-center pt-2 '>
-        <FontAwesomeIcon icon={faComputerMouse} />
         </div>
         </div>
         </a>
         </Link>
+        </motion.div>
         {/* <button onClick={logout}>Logout</button> */}
         </>)
     }

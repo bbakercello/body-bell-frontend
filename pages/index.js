@@ -36,23 +36,23 @@ export default function Home() {
       <meta name='keywords' content='music, record label, body bell, spotify'/>
     </Head>
    
-    <div>
+    <div className='flex flex-col'>
         <Logo/>
-      <div className='grid justify-center'>
+      <div className='flex flex-col justify-center'>
         <h1 className='self-center text-4xl text-sky-600 pt-8'>BODY BELL RECORDS</h1>
         <motion.svg
-          width="600"
-          height="600"
-          viewBox="0 0 600 600"
+          width="half"
+          height="none"
+          viewBox="0 0 600 10"
           initial="hidden"
           animate="visible"
          >
         <motion.line
-        x1="0"
+        x1="100"
         y1="0"
-        x2="300"
+        x2="500"
         y2="0"
-        stroke="#ffffff"
+        stroke="#0369a1"
         variants={draw}
         custom={2}
       />

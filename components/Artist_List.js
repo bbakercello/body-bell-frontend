@@ -40,12 +40,11 @@ function Artist_List(props) {
                                 // console.log(token)
                                 {if(value[0]!= undefined){
                                 return (
-                                    <motion.div whileHover={{scale: 1.2}}
+                                    <motion.div 
+                                    whileHover={{scale: 1.2}}
                                     whileTap={{ scale: 0.8 }}
-                                    
                                     >
                                     <div key={index} className='py-3 rounded-md'>
-                                        
                                         <Link href={{ pathname: `/artists/${artist._id}`, query: { data: [{ value }.value[0], name, bio, instagram, spotify] } }}>
                                             <a><h2 className='text-2xl text-sky-600'> {artist.name} </h2></a>
                                         </Link>           
