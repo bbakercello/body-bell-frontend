@@ -35,7 +35,7 @@ export default function Details(props) {
   const instagram = props.value.data[3];
   const spotify = props.value.data[4];
   const token = props.value.data[0];
-  // console.log(props.value)
+  const draw = props.value.data[5];
 
   const getArtist = async (token) => {
     const result = await fetch(
@@ -97,12 +97,33 @@ export default function Details(props) {
     return (
       <>
         <Top_Nav />
-        <div className="h-full bg-slate-400 place-self-center ">
+        <div className="h-full bg-gradient-to-b from-zinc-800 via-zinc-700 to-zinc-800 place-self-center ">
           <Layout className="place-self-center">
             <div className="flex flex-row place-self-center">
-              <h1 className="font-body text-4xl place-self-center">{name}</h1>
+              <div className="flex flex-col justify-center">
+                <h1 className="font-body text-sky-600 text-4xl place-self-center">
+                  {name}
+                </h1>
+                <motion.svg
+                  width="400"
+                  height="60"
+                  viewBox="0 0 600 100"
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <motion.line
+                    x1="100"
+                    y1="0"
+                    x2="500"
+                    y2="0"
+                    stroke="#0369a1"
+                    variants={draw}
+                    custom={2}
+                  />
+                </motion.svg>
+              </div>
               <Link href={instagram}>
-                <a className="text-3xl m-3 place-self-center">
+                <a className="text-3xl m-3 text-sky-600 place-self-center">
                   <FontAwesomeIcon icon={faInstagram} />
                 </a>
               </Link>
@@ -142,7 +163,7 @@ export default function Details(props) {
                   console.log(album.album_type);
                   return (
                     <div className="flex flex-col">
-                      <h3 className="pt-4 font-bold text-xl flex justify-center">
+                      <h3 className="pt-4 text-sky-600 font-bold text-xl flex justify-center">
                         <a href={album.uri}>{album.name}</a>
                       </h3>
                       <img
@@ -152,7 +173,10 @@ export default function Details(props) {
                       />
                       <div className="flex justify-center">
                         <button className="bg-sky-700 w-20 mt-4 rounded-lg">
-                          <Collapsible className="grid" trigger="Learn">
+                          <Collapsible
+                            className="grid text-sky-800"
+                            trigger="Learn"
+                          >
                             <div>
                               <span>{album.album_type}</span>
                               <span> released: {album.release_date}</span>
