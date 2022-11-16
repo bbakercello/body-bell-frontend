@@ -26,7 +26,7 @@ const SpotifyProvider = (props) => {
      
       //token is in params but must be split by the '&'
       token = hash.substring(1).split('&')
-      // console.log(token)
+    
       //token defined as [access_token = '']
       // need to grab the element in this array that starts after the 'access_token='
       //'token_type' is located at [0], need to target at [1] to get the desired string 
@@ -48,34 +48,33 @@ const SpotifyProvider = (props) => {
       
       return (
         <>
-        <motion.a
-        whileHover={{ scale: 1.2 }}
-        whileTap={{ scale: 0.8 }}
-        >
-        <Link className='p-2 bg-sky-500/100 rounded-md' href={{ pathname:`${process.env.AUTH_ENDPOINT}?client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URI}&response_type=${RESPONSE_TYPE}`,query: { data: [token] }}}>
+          <motion.a whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+            <Link
+              className="p-2 bg-sky-700 rounded-md"
+              href={`${process.env.AUTH_ENDPOINT}?client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+            >
+              <div className="pt-10">
+                <p className="p-2 bg-sky-500/100 rounded-md focus:outline-none focus:ring focus:ring-sky-300 rounded-md">
                   Spotify Login
-        </Link>
-        </motion.a>
-        
-        <motion.div
-         whileHover={{ scale: 1.2 }}
-         whileTap={{ scale: 0.8 }}
-         >
-        <Link href={{ pathname: `/info`}}>
-        <a className=''>
-        <div>
-        <div className='pt-10'>
-          
-        <p className='p-2 bg-sky-500/100 rounded-md focus:outline-none focus:ring focus:ring-sky-300 rounded-md'>Learn More</p>
-        </div>
-        <div className='flex justify-center items-center pt-2 '>
-        </div>
-        </div>
-        </a>
-        </Link>
-        </motion.div>
-        {/* <button onClick={logout}>Logout</button> */}
-        </>)
+                </p>
+              </div>
+            </Link>
+          </motion.a>
+
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+            <Link href={{ pathname: `/info` }}>
+              <div>
+                <div className="pt-10">
+                  <p className="p-2 bg-sky-500/100 rounded-md focus:outline-none focus:ring focus:ring-sky-300 rounded-md">
+                    Learn More
+                  </p>
+                </div>
+                <div className="flex justify-center items-center pt-2 "></div>
+              </div>
+            </Link>
+          </motion.div>
+        </>
+      );
     }
     else{ 
       return(
