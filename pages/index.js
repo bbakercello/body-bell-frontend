@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-screen">
+    <div>
       <Top_Nav />
       <div className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900">
         <Head>
@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <Layout className="w-vw">
+          <Layout>
             <SpotifyProvider
               HEROKU={HEROKU}
               CLIENT_ID={CLIENT_ID}

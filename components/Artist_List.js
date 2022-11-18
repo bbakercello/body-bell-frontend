@@ -19,14 +19,14 @@ function Artist_List(props) {
   }, []);
   const loaded = () => {
     return (
-      <>
-        {/* <navBar/> */}
+      <div>
         <SpotifyContext.Consumer>
           {(value) => (
             //write code within this function to display more components and HTML
             <>
               <div>
                 {artist.map((artist, index) => {
+                  
                   //preparing vars to send through Link as props
                   let name = artist.name;
                   let bio = artist.bio;
@@ -74,7 +74,7 @@ function Artist_List(props) {
             </>
           )}
         </SpotifyContext.Consumer>
-      </>
+      </div>
     );
   };
 
