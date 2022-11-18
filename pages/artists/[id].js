@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 const HEROKU = process.env.NEXT_PUBLIC_BACKEND;
-import Message from "../../components/Message";
-import New_Message from "../../components/New_Message";
+import Contact from "../../components/Contact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
@@ -97,7 +96,7 @@ export default function Details(props) {
     return (
       <>
         <Top_Nav />
-        <div className="h-full bg-gradient-to-b from-sky-800 via-sky-700 to-sky-800 place-self-center ">
+        <div className="h-full bg-gradient-to-b from-sky-600 via-sky-700 to-sky-600 place-self-center ">
           <Layout className="place-self-center">
             <div className="flex flex-row place-self-center">
               <div className="flex flex-col justify-center">
@@ -156,7 +155,7 @@ export default function Details(props) {
                   console.log(album.album_type);
                   return (
                     <div className="flex flex-col">
-                      <h3 className="pt-4 text-sky-600 font-bold text-xl flex justify-center">
+                      <h3 className="pt-4 text-sate-600 font-bold text-xl flex justify-center">
                         <a href={album.uri}>{album.name}</a>
                       </h3>
                       <img
@@ -165,28 +164,20 @@ export default function Details(props) {
                         alt="Album"
                       />
                       <div className="flex justify-center">
-                        <button className="bg-sky-700 w-20 mt-4 rounded-lg">
+                        <button className="bg-neutral-300 w-20 mt-4 text-xl rounded-lg">
                           <Collapsible
                             className="grid text-slate-800"
                             trigger="Learn"
                           >
                             <div className="w-20 flex flex-col">
-                              <p>{album.album_type}</p>
-                              <p>{album.release_date}</p>
+                              <p className="text-sm">{album.album_type}</p>
+                              <p className="text-xs">{album.release_date}</p>
                             </div>
                           </Collapsible>
                         </button>
                       </div>
                       <div className="flex justify-center p-4 rounded-lg">
-                        <Message
-                          deleteMessage={actuallyDeleteMessage}
-                          message={message}
-                          artist={artist}
-                          id={mongoID}
-                        />
-                      </div>
-                      <div className="pt-3">
-                        <New_Message id={mongoID} artist={artist} />
+                        <Contact />
                       </div>
                     </div>
                   );
