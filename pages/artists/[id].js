@@ -97,13 +97,20 @@ export default function Details(props) {
     return (
       <>
         <Top_Nav />
-        <div className="h-full bg-gradient-to-b from-zinc-800 via-zinc-700 to-zinc-800 place-self-center ">
+        <div className="h-full bg-gradient-to-b from-sky-800 via-sky-700 to-sky-800 place-self-center ">
           <Layout className="place-self-center">
             <div className="flex flex-row place-self-center">
               <div className="flex flex-col justify-center">
-                <h1 className="font-body text-sky-600 text-4xl place-self-center">
-                  {name}
-                </h1>
+                <div className="flex justify-center">
+                  <h1 className="font-body text-slate-900 text-4xl place-self-center">
+                    {name}
+                  </h1>
+                  <Link href={instagram}>
+                    <a className="text-2xl m-3 text-slate-800">
+                      <FontAwesomeIcon icon={faInstagram} />
+                    </a>
+                  </Link>
+                </div>
                 <motion.svg
                   width="400"
                   height="60"
@@ -116,17 +123,12 @@ export default function Details(props) {
                     y1="0"
                     x2="500"
                     y2="0"
-                    stroke="#0369a1"
+                    stroke="#0f172a"
                     variants={draw}
                     custom={2}
                   />
                 </motion.svg>
               </div>
-              <Link href={instagram}>
-                <a className="text-3xl m-3 text-sky-600 place-self-center">
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-              </Link>
             </div>
             <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
               <a
@@ -143,17 +145,6 @@ export default function Details(props) {
                 />
               </a>
             </motion.div>
-            <div className="border-4 border-indigo-500/10 p-4 rounded-lg">
-              <Message
-                deleteMessage={actuallyDeleteMessage}
-                message={message}
-                artist={artist}
-                id={mongoID}
-              />
-            </div>
-            <div className="pt-3">
-              <New_Message id={mongoID} artist={artist} />
-            </div>
 
             <div>
               <h2 className="mt-6 text-3xl">Albums</h2>
@@ -186,7 +177,17 @@ export default function Details(props) {
                           </Collapsible>
                         </button>
                       </div>
-                      <ul></ul>
+                      <div className="flex justify-center p-4 rounded-lg">
+                        <Message
+                          deleteMessage={actuallyDeleteMessage}
+                          message={message}
+                          artist={artist}
+                          id={mongoID}
+                        />
+                      </div>
+                      <div className="pt-3">
+                        <New_Message id={mongoID} artist={artist} />
+                      </div>
                     </div>
                   );
                 }

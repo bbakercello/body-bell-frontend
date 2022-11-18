@@ -6,15 +6,12 @@ const Message = (props) => {
   // console.log(props.id)
   // console.log(props.actuallyDeleteMessage)
   return (
-    <section className="collapsible ">
+    <section className="collapsible">
       <Collapsible
-        className="comment-title  bg-slate-200"
         trigger="View Messages"
         triggerStyle={{
-          backgroundColor: "rgba(55, 55, 55, 0.2)",
           borderRadius: "10px",
           fontSize: "16px",
-          border: "10px solid rgba(255, 255, 255, 0)",
           marginBottom: "20px",
           fontWeight: "bold",
         }}
@@ -25,11 +22,10 @@ const Message = (props) => {
           {
             if (props.id == message.artist) {
               return (
-                <span className="message" key={index}>
-                  <div className="messageContent pt-3">{message.message}</div>
+                <span key={index}>
+                  <div className="pt-3">{message.message}</div>
                   <input
                     type="button"
-                    className="deleteMessageButton"
                     value="Delete"
                     onClick={props.deleteMessage}
                     id={message._id}
