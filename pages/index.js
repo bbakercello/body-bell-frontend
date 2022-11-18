@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div layout="lg:w-fill"  className="w-full">
       <Top_Nav />
       <div className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900">
         <Head>
@@ -78,6 +78,6 @@ export default function Home() {
           </Layout>
         </div>
       </div>
-    </>
+    </div>
   );
 }
