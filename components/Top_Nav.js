@@ -7,7 +7,9 @@ import { faWpexplorer } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
 import { rotate } from "./Usetime";
-//useState array for Listbox
+
+
+// Page variable used in Explore expandable to map over any future links added into array
 const page = [
   { id: 1, name: "Home", pathname: "/", unavailable: false },
   { id: 2, name: "About", pathname: "/info", unavailable: false },
@@ -17,24 +19,24 @@ const Top_Nav = () => {
   const [selectedPage, setSelectedPage] = useState(page[0]);
   return (
     <>
-      <div className="bg-slate-50 flex justify-between">
+      <div className="bg-neutral-200 flex justify-between">
         <div className="flex">
+          <img
+            className="w-16 rounded-full drop-shadow-lg p-1"
+            src="https://i.imgur.com/hdOhoXL.jpg"
+            alt="Logo"
+          ></img>
           <motion.div
             style={{ rotate }}
             animate={{ x: [1, 4, 0.5] }}
             whileHover={{ scale: 1.1 }}
           >
-            <img
-              className="w-16 rounded-full drop-shadow-lg p-1"
-              src="https://i.imgur.com/hdOhoXL.jpg"
-              alt="Logo"
-            ></img>
+            <Link href="https://www.instagram.com/bodybellrecords/">
+              <a className="flex justify-center w-8 rounded-lg text-2xl m-3">
+                <FontAwesomeIcon icon={faInstagram} className="pt-3 pb-2 " />
+              </a>
+            </Link>
           </motion.div>
-          <Link href="https://www.instagram.com/bodybellrecords/">
-            <a className="flex justify-center w-8 bg-slate-200 hover:bg-slate-300 rounded-lg text-2xl m-3">
-              <FontAwesomeIcon icon={faInstagram} className="pt-3 pb-2 " />
-            </a>
-          </Link>
         </div>
         <div className="pr-4 ">
           <div className="flex flex-row">
@@ -56,11 +58,17 @@ const Top_Nav = () => {
                       key={page.id}
                       value={page}
                       disabled={page.unavailable}
-                      className="pt-1 bg-slate-200 hover:bg-slate-300 rounded-lg"
+                      className="pt-1 rounded-lg"
                     >
-                      <Link href={{ pathname: page.pathname }}>
-                        <a>{page.name}</a>
-                      </Link>
+                      <motion.div
+                        style={{ rotate }}
+                        animate={{ x: [1, 4, 0.5] }}
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <Link href={{ pathname: page.pathname }}>
+                          <a>{page.name}</a>
+                        </Link>
+                      </motion.div>
                     </Listbox.Option>
                   ))}
                 </Listbox.Options>
