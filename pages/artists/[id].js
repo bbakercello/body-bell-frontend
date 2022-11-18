@@ -131,6 +131,8 @@ export default function Details(props) {
             <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
               <a
                 className="drop-shadow-lg pb-3"
+                rel="noopener noreferrer"
+                target="_blank"
                 href={data.external_urls.spotify}
               >
                 <img
@@ -174,12 +176,12 @@ export default function Details(props) {
                       <div className="flex justify-center">
                         <button className="bg-sky-700 w-20 mt-4 rounded-lg">
                           <Collapsible
-                            className="grid text-sky-800"
+                            className="grid text-slate-800"
                             trigger="Learn"
                           >
-                            <div>
-                              <span>{album.album_type}</span>
-                              <span> released: {album.release_date}</span>
+                            <div className="w-20 flex flex-col">
+                              <p>{album.album_type}</p>
+                              <p>{album.release_date}</p>
                             </div>
                           </Collapsible>
                         </button>

@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   // console.log(props)
   return (
     <>
-      <div className={styles.container}>
+      <div >
         <main className={styles.main}>{children}</main>
       </div>
       <Footer />

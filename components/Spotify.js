@@ -8,7 +8,8 @@ const SpotifyContext = React.createContext([{}, () => {}]);
 
 const SpotifyProvider = (props) => {
   const RESPONSE_TYPE = "token";
-  // console.log(props.REDIRECT_URI)
+  const draw = props.draw
+
   //Upon Login to Spotify, a token will be generated and hashed along with a token type of 'BEARER'
 
   //useState to hold onto token after initialization
@@ -21,18 +22,14 @@ const SpotifyProvider = (props) => {
 
     if (!token && hash) {
       //have not defined token yet, so here we will do that
-
       //token is in params but must be split by the '&'
       token = hash.substring(1).split("&");
-
       //token defined as [access_token = '']
       // need to grab the element in this array that starts after the 'access_token='
       //'token_type' is located at [0], need to target at [1] to get the desired string
       token = token
         .find((elem) => elem.startsWith("access_token"))
         .split("=")[1];
-      // let myToken=token
-
       window.localStorage.setItem("token", token);
     }
     setToken(token);
@@ -81,10 +78,11 @@ const SpotifyProvider = (props) => {
             {props.children}
             <div className="pt-10 flex flex-col">
               <div className="flex justify-center"></div>
-              <div className="grid grid-rows-3 grid-col">
+              <div className="grid grid-rows-2 grid-col">
                 <img
                   className="outline-double drop-shadow-xl w-60 rounded-lg row-start-1 col-start-1 row-span-3 col-span-3"
                   src="https://i.imgur.com/q7hWwpw.jpg"
+                  alt=""
                 ></img>
                 <div className="row-start-2 col-start-2 pt-6 flex flex-col mt-16">
                   <motion.div
@@ -98,6 +96,7 @@ const SpotifyProvider = (props) => {
                       Enter
                     </button>
                   </motion.div>
+
                   <motion.div
                     animate={{ rotate: 360 }}
                     whileHover={{ scale: 1.2 }}
@@ -109,6 +108,7 @@ const SpotifyProvider = (props) => {
                     <img
                       className="w-5 rounded-full blur "
                       src="https://i.imgur.com/rWidBII.jpg"
+                      alt=""
                     ></img>
                   </motion.div>
                 </div>
@@ -116,6 +116,42 @@ const SpotifyProvider = (props) => {
             </div>
           </>
         </SpotifyContext.Provider>
+        <div className="h-3"></div>
+        <motion.svg
+          width="1000"
+          height="100"
+          viewBox="0 0 600 400"
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.line
+            x1="300"
+            y1="0"
+            x2="350"
+            y2="100"
+            stroke="#0369a1"
+            variants={draw}
+            custom={1}
+          />
+          <motion.line
+            x1="300"
+            y1="0"
+            x2="250"
+            y2="100"
+            stroke="#0369a1"
+            variants={draw}
+            custom={1}
+          />
+          <motion.line
+            x1="300"
+            y1="0"
+            x2="300"
+            y2="400"
+            stroke="#0369a1"
+            variants={draw}
+            custom={1}
+          />
+        </motion.svg>
       </>
     );
   }

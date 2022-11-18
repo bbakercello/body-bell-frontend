@@ -71,8 +71,9 @@ export default function Home() {
               CLIENT_ID={CLIENT_ID}
               AUTH_ENDPOINT={AUTH_ENDPOINT}
               REDIRECT_URI={REDIRECT_URI}
+              draw={draw}
             >
-              <Artist_List draw={draw} HEROKU={HEROKU} className="bg-black " />
+              <Artist_List HEROKU={HEROKU} className="bg-black " />
             </SpotifyProvider>
           </Layout>
         </div>

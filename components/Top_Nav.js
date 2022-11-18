@@ -8,7 +8,6 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
 import { rotate } from "./Usetime";
 
-
 // Page variable used in Explore expandable to map over any future links added into array
 const page = [
   { id: 1, name: "Home", pathname: "/", unavailable: false },

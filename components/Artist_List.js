@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { SpotifyContext } from "../components/Spotify";
 import Link from "next/link";
-import Email from "./Email";
 import { motion } from "framer-motion";
 
 function Artist_List(props) {
   const url = `${props.HEROKU}` + "artists";
-  // console.log(url)
   const [artist, setArtist] = useState([]);
 
   const getArtists = async () => {
@@ -19,7 +17,6 @@ function Artist_List(props) {
     getArtists();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // console.log(props)
   const loaded = () => {
     return (
       <>
@@ -36,7 +33,7 @@ function Artist_List(props) {
                   let instagram = artist.instagram;
                   let spotify = artist.spotifyID;
                   let draw = props.draw;
-                  // console.log(token)
+        
                   {
                     if (value[0] != undefined) {
                       return (
@@ -77,7 +74,6 @@ function Artist_List(props) {
             </>
           )}
         </SpotifyContext.Consumer>
-        <Email />
       </>
     );
   };
