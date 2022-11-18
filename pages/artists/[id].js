@@ -101,11 +101,11 @@ export default function Details(props) {
             <div className="flex flex-row place-self-center">
               <div className="flex flex-col justify-center">
                 <div className="flex justify-center">
-                  <h1 className="font-body text-slate-900 text-4xl place-self-center">
+                  <h1 className="font-body text-slate-900 text-4xl place-self-center mt-3">
                     {name}
                   </h1>
                   <Link href={instagram}>
-                    <a className="text-2xl m-3 text-slate-800">
+                    <a className="text-2xl m-3 pt-3 text-slate-800">
                       <FontAwesomeIcon icon={faInstagram} />
                     </a>
                   </Link>

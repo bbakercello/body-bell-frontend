@@ -12,7 +12,7 @@ const info = () => {
       <Top_Nav />
       <div className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900">
         <Layout>
-          <div className="flex flex-col pr-8 pl-8 bg-neutral-300 rounded-lg">
+          <div className="flex flex-col pr-8 pl-8 bg-neutral-300 rounded-lg m-10">
             <h1 className="self-center leading-normal text-4xl py-8 underline underline-offset-8">
               {" "}
               About Us
