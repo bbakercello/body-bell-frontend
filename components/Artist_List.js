@@ -25,7 +25,7 @@ function Artist_List(props) {
           {(value) => (
             //write code within this function to display more components and HTML
             <>
-              <div className="flex flex-auto space-x-6">
+              <div>
                 {artist.map((artist, index) => {
                   //preparing vars to send through Link as props
                   let name = artist.name;

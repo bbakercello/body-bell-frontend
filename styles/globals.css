@@ -4,6 +4,7 @@
 @import 'tailwindcss/utilities';
 
 * {
+/* width: 100vw; */
 font-family: din-2014, sans-serif;
 font-weight: 400;
 font-style: normal;

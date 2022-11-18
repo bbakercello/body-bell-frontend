@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div layout="lg:w-fill"  className="w-full">
+    <div className="w-screen">
       <Top_Nav />
       <div className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900">
         <Head>
@@ -39,7 +39,7 @@ export default function Home() {
           />
         </Head>
 
-        <div className="flex flex-col">
+        <div className="">
           <Logo />
           <div className="flex flex-col justify-center">
             <h1 className="self-center text-4xl text-sky-600 pt-8">
@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <Layout>
+          <Layout className="w-vw">
             <SpotifyProvider
               HEROKU={HEROKU}
               CLIENT_ID={CLIENT_ID}
