@@ -19,3 +19,9 @@ p {
 label {
     padding: 5px;
 }
+
+.container {
+
+  width:fit-content;
+  height:fit-content
+}

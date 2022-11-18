@@ -59,7 +59,7 @@ const SpotifyProvider = (props) => {
         <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
           <Link href={{ pathname: `/info` }}>
             <div>
-              <div className="pt-10">
+              <div className="pt-10 mb-80">
                 <p className="p-2 bg-sky-500/100 rounded-md focus:outline-none focus:ring focus:ring-sky-300 rounded-md">
                   Learn More
                 </p>
