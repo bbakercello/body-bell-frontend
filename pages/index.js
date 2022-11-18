@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div>
       <Top_Nav />
       <div className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900">
         <Head>
@@ -39,7 +39,7 @@ export default function Home() {
           />
         </Head>
 
-        <div className="flex flex-col">
+        <div className="">
           <Logo />
           <div className="flex flex-col justify-center">
             <h1 className="self-center text-4xl text-sky-600 pt-8">
@@ -78,6 +78,6 @@ export default function Home() {
           </Layout>
         </div>
       </div>
-    </>
+    </div>
   );
 }

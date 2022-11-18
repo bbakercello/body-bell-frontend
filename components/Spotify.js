@@ -64,7 +64,7 @@ const SpotifyProvider = (props) => {
                   Learn More
                 </p>
               </div>
-              <div className="flex justify-center items-center pt-2 "></div>
+              <div className="flex justify-center items-center pt-2"></div>
             </div>
           </Link>
         </motion.div>

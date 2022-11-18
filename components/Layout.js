@@ -3,7 +3,6 @@ import styles from "../styles/Layout.module.css";
 import Footer from "./Footer";
 
 const Layout = ({ children }) => {
-  // console.log(props)
   return (
     <>
       <div >
