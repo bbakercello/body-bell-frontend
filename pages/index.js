@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div className="lg:w-max w-fit flex flex-col justify-center">
+    <div className="w-screen lg:w-max ">
       <Top_Nav />
       <div className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900">
         <Head>
