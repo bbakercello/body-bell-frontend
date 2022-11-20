@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 
 const info = () => {
   return (
-    <div>
+    <div className=''>
       <Top_Nav />
       <div className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900">
         <Layout>
