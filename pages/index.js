@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col justify-center container">
+    <div className="w-fit flex flex-col justify-center">
       <Top_Nav />
       <div className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900">
         <Head>
@@ -38,7 +38,6 @@ export default function Home() {
             content="music, record label, body bell, spotify"
           />
         </Head>
-
         <div className="">
           <Logo />
           <div className="flex flex-col justify-center">
