@@ -21,7 +21,6 @@ label {
 }
 
 .container {
-
   width:fit-content;
-  height:fit-content
+  min-height:max-content
 }
