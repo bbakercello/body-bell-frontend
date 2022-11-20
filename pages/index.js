@@ -28,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-screen lg:w-max ">
+    <div className="w-screen">
       <Top_Nav />
       <div className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900">
         <Head>
@@ -38,7 +38,7 @@ export default function Home() {
             content="music, record label, body bell, spotify"
           />
         </Head>
-        <div className="">
+        <div className="flex flex-col self-center">
           <Logo />
           <div className="flex flex-col justify-center">
             <h1 className="self-center text-4xl text-sky-600 pt-8">

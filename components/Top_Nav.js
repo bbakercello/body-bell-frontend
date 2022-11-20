@@ -7,6 +7,7 @@ import { faWpexplorer } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
 import { rotate } from "./Usetime";
+import Image from "next/image";
 
 // Page variable used in Explore expandable to map over any future links added into array
 const page = [
@@ -19,12 +20,16 @@ const Top_Nav = () => {
   return (
     <>
       <div className="bg-neutral-200 flex justify-between">
-        <div className="flex">
-          <img
-            className="w-16 rounded-full drop-shadow-lg p-1"
-            src="https://i.imgur.com/hdOhoXL.jpg"
-            alt="Logo"
-          ></img>
+        <div className="flex ">
+          <div className="relative w-60 rounded-full">
+            <Image
+              className="w-16 rounded-full drop-shadow-lg p-1"
+              src="https://i.imgur.com/hdOhoXL.jpg"
+              layout="fill"
+              objectFit="contain"
+              alt="logo"
+            ></Image>
+          </div>
           <motion.div
             style={{ rotate }}
             animate={{ x: [1, 4, 0.5] }}
