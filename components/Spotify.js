@@ -46,7 +46,7 @@ const SpotifyProvider = (props) => {
         <motion.a whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
           <Link
             className="p-2 bg-sky-700 rounded-md"
-            href={`https://body-bell-frontend.vercel.app/?client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+            href={`${process.env.AUTH_ENDPOINT}?client_id=${process.env.CLIENT_ID}&redirect_uri=body-bell-frontend.vercel.app/&response_type=${RESPONSE_TYPE}`}
           >
             <div className="pt-10">
               <p className="p-2 bg-sky-500/100 rounded-md focus:outline-none focus:ring focus:ring-sky-300 rounded-md">
