@@ -35,15 +35,17 @@ export default function Details(props) {
   const draw = props.value.data[5];
 
   const getArtist = async (token) => {
+    console.log(token)
     try {
-        const res = await fetch(
+      token = await(token)
+        const response = await fetch(
           `https://api.spotify.com/v1/artists/${spotify}`,
-            {
+            {   mode: 'cors',
                 method: 'GET',
-                headers: { Authorization: "Bearer " + token },
+                headers: {Accept: 'application/json', Authorization: "Bearer " + token},
             }
         );
-        const data = await res.json();
+        const data = await response.json();
         console.log(data);
         setData(data);
     } catch (err) {
@@ -53,14 +55,15 @@ export default function Details(props) {
 
   const getAlbums = async (token) => {
     try {
-    const result = await fetch(
+    const response = await fetch(
       `https://api.spotify.com/v1/artists/${spotify}/albums`,
       {
+        mode: "cors",
         method: "GET",
-        headers: { Authorization: "Bearer " + token },
+        headers: { Accept: 'application/json', Authorization: "Bearer " + token },
       }
     );
-    const record = await result.json();
+    const record = await response.json();
     setAlbum(record);
   } catch (err){
     console.log(err)
