@@ -4,7 +4,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 
-
 function Artist_List(props) {
   const url = `${props.HEROKU}` + "artists";
   const [artist, setArtist] = useState([]);
