@@ -13,8 +13,7 @@ import { motion } from "framer-motion";
 export async function getServerSideProps(context) {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
-  // const res = await fetch(`https://.../posts/${params.id}`)
-  // const post = await res.json()
+
 
   // Pass post data to the page via props
   return { props: { value: context.query } };
@@ -36,18 +35,24 @@ export default function Details(props) {
   const draw = props.value.data[5];
 
   const getArtist = async (token) => {
-    const result = await fetch(
-      `https://api.spotify.com/v1/artists/${spotify}`,
-      {
-        method: "GET",
-        headers: { Authorization: "Bearer " + token },
-      }
-    );
-    const data = await result.json();
-    setData(data);
-  };
+    try {
+        const res = await fetch(
+          `https://api.spotify.com/v1/artists/${spotify}`,
+            {
+                method: 'GET',
+                headers: { Authorization: "Bearer " + token },
+            }
+        );
+        const data = await res.json();
+        console.log(data);
+        setData(data);
+    } catch (err) {
+        console.log(err);
+    }
+};
 
   const getAlbums = async (token) => {
+    try {
     const result = await fetch(
       `https://api.spotify.com/v1/artists/${spotify}/albums`,
       {
@@ -57,7 +62,10 @@ export default function Details(props) {
     );
     const record = await result.json();
     setAlbum(record);
-  };
+  } catch (err){
+    console.log(err)
+  }
+};
 
 
   
