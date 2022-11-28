@@ -12,7 +12,15 @@ const nextConfig = {
   },
   images: {
     domains: ['"i.scdn.co','https://api.spotify.com/v1/artists']
-  }
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://api.example.com/:path*',
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
