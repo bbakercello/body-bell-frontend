@@ -155,13 +155,13 @@ const getAlbums = async (token) => {
                           </Collapsible>
                         </button>
                       </div>
-                      <div className="flex justify-center p-4 rounded-lg">
-                        <Contact />
-                      </div>
                     </div>
                   );
                 }
               })}
+            </div>
+            <div className="flex justify-center p-4 rounded-lg">
+              <Contact />
             </div>
           </Layout>
           <div className="content-center"></div>
