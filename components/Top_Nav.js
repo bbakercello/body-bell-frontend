@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWpexplorer } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
-import { rotate } from "./Usetime";
 import Image from "next/image";
 
 // Page variable used in Explore expandable to map over any future links added into array
@@ -31,7 +30,6 @@ const Top_Nav = () => {
             ></Image>
           </div>
           <motion.div
-            style={{ rotate }}
             animate={{ x: [1, 4, 0.5] }}
             whileHover={{ scale: 1.1 }}
           >
@@ -65,7 +63,6 @@ const Top_Nav = () => {
                       className="pt-1 rounded-lg"
                     >
                       <motion.div
-                        style={{ rotate }}
                         animate={{ x: [1, 4, 0.5] }}
                         whileHover={{ scale: 1.1 }}
                       >

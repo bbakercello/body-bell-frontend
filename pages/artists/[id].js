@@ -31,39 +31,39 @@ export default function Details(props) {
   const spotify = props.value.data[4];
   const token = props.value.data[0];
   const draw = props.value.data[5];
-
-  const getArtist = async (token) => {
-    console.log(token)
+const getArtist = async (token) => {
     try {
-      token = await(token)
-        const response = await fetch(
-          `https://api.spotify.com/v1/artists/${spotify}`,
-            {   mode: 'cors',
-                method: 'GET',
-                headers: {Accept: 'application/json', Authorization: "Bearer " + token},
-            }
-        );
-        const data = await response.json();
-        console.log(data);
-        setData(data);
+      const result = await fetch(
+        `https://api.spotify.com/v1/artists/${spotify}`,
+        {
+          method: "GET",
+          headers: { Authorization: "Bearer " + token },
+        }
+      );
+      const data = await result.json();
+      setData(data);
     } catch (err) {
-        console.log(err);
+      console.log(err);
     }
-};
-
+  };
   const getAlbums = async (token) => {
     try {
-    const response = await fetch(
-      `https://api.spotify.com/v1/artists/${spotify}/albums`,
-      {
-        mode: "cors",
-        method: "GET",
-        headers: { Accept: 'application/json', Authorization: "Bearer " + token },
-      }
-    );
-    const record = await response.json();
-    setAlbum(record);
-
+      const response = await fetch(
+        `https://api.spotify.com/v1/artists/${spotify}/albums`,
+        {
+          mode: "cors",
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      const record = await response.json();
+      setAlbum(record);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
 
@@ -157,13 +157,13 @@ export default function Details(props) {
                           </Collapsible>
                         </button>
                       </div>
-                      <div className="flex justify-center p-4 rounded-lg">
-                        <Contact />
-                      </div>
                     </div>
                   );
                 }
               })}
+            </div>
+            <div className="flex justify-center p-4 rounded-lg">
+              <Contact />
             </div>
           </Layout>
           <div className="content-center"></div>
