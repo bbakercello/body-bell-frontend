@@ -27,8 +27,6 @@ export default function Details(props) {
   const [message, setMessage] = useState([]);
 
   //url for fetching messages
-  const url = `${HEROKU}` + "messages";
-  const mongoID = props.value.id;
   const name = props.value.data[1];
   const bio = props.value.data[2];
   const instagram = props.value.data[3];
@@ -60,39 +58,13 @@ export default function Details(props) {
     setAlbum(record);
   };
 
-  const getMessages = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    setMessage(data);
-  };
-
-  const actuallyDeleteMessage = async (e) => {
-    e.preventDefault();
-    const url =
-      `https://body-bell-records.herokuapp.com/messages/` + `${e.target.id}`;
-
-    try {
-      console.log(e.target.id);
-      const deleteThis = await fetch(url, {
-        method: "DELETE",
-      });
-      const deletedMessage = await deleteThis.json();
-      getMessages();
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   useEffect(() => {
     getArtist(token);
     getAlbums(token);
-    getMessages();
     console.log(token);
   }, []);
 
   const loaded = () => {
-    let artist = message.artist;
-
     return (
       <>
         <Top_Nav />

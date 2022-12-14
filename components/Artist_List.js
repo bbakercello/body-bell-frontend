@@ -4,11 +4,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 function Artist_List(props) {
-  const url = `${props.HEROKU}` + "artists";
+  const url = '../api/artists';
   const [artist, setArtist] = useState([]);
 
   const getArtists = async () => {
     const response = await fetch(url);
+    console.log(response)
     const data = await response.json();
     setArtist(data);
   };
