@@ -19,7 +19,7 @@ const Top_Nav = () => {
   const [selectedPage, setSelectedPage] = useState(page[0]);
   return (
     <>
-      <div className="bg-neutral-200 flex justify-between">
+      <div className="bg-neutral-200 flex justify-around md:justify-between">
         <div className="flex ">
           <div className="relative w-60 rounded-full">
             <Image
