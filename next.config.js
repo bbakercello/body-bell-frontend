@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env: {
-    REDIRECT_URI: "http://localhost:3000",
+    REDIRECT_URI: "https://body-bell-frontend.vercel.app",
     CLIENT_ID: "afad3723193640e2ad7cf5e9c8bd97c6",
     BACKEND: "https://body-bell-records.herokuapp.com/",
     AUTH_ENDPOINT: "https://accounts.spotify.com/authorize",
