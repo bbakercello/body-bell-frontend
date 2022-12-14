@@ -45,18 +45,25 @@ export default function Details(props) {
     const data = await result.json();
     setData(data);
   };
-
-  const getAlbums = async (token) => {
-    const result = await fetch(
+const getAlbums = async (token) => {
+  try {
+    const response = await fetch(
       `https://api.spotify.com/v1/artists/${spotify}/albums`,
       {
+        mode: "cors",
         method: "GET",
-        headers: { Authorization: "Bearer " + token },
+        headers: {
+          Accept: "application/json",
+          Authorization: "Bearer " + token,
+        },
       }
     );
-    const record = await result.json();
+    const record = await response.json();
     setAlbum(record);
-  };
+  } catch (err) {
+    console.log(err);
+  }
+};
 
   useEffect(() => {
     getArtist(token);
