@@ -25,8 +25,6 @@ export default function Details(props) {
   const [album, setAlbum] = useState("");
 
   //url for fetching messages
-  const url = `${HEROKU}` + "messages";
-  const mongoID = props.value.id;
   const name = props.value.data[1];
   const bio = props.value.data[2];
   const instagram = props.value.data[3];
@@ -65,13 +63,9 @@ export default function Details(props) {
     );
     const record = await response.json();
     setAlbum(record);
-  } catch (err){
-    console.log(err)
-  }
-};
 
+  };
 
-  
 
   useEffect(() => {
     getArtist(token);
@@ -80,7 +74,6 @@ export default function Details(props) {
   }, []);
 
   const loaded = () => {
-
     return (
       <>
         <Top_Nav />

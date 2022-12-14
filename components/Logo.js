@@ -1,11 +1,18 @@
-import React from 'react'
+/* eslint-disable jsx-a11y/alt-text */
+import React from "react";
+import Image from "next/image";
 
 const Logo = (props) => {
   return (
-    <>
-    <span className='p-5 flex justify-center'><img className='w-1/3 md:w-80 rounded-full drop-shadow-lg mt-6' src='https://i.imgur.com/hdOhoXL.jpg' alt="Logo"></img></span>
-    </>
-  )
-}
+    <div className="p-5 w-1/4 flex self-center relative">
+      <Image
+        className="w-1/3 md:w-80 rounded-full drop-shadow-lg mt-6"
+        src="https://i.imgur.com/hdOhoXL.jpg"
+        height={1750}
+        width={1750}
+      />
+    </div>
+  );
+};
 
-export default Logo
+export default Logo;
