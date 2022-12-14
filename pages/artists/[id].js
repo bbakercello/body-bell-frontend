@@ -13,8 +13,7 @@ import { motion } from "framer-motion";
 export async function getServerSideProps(context) {
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
-  // const res = await fetch(`https://.../posts/${params.id}`)
-  // const post = await res.json()
+
 
   // Pass post data to the page via props
   return { props: { value: context.query } };
@@ -24,7 +23,6 @@ export async function getServerSideProps(context) {
 export default function Details(props) {
   const [data, setData] = useState("");
   const [album, setAlbum] = useState("");
-  const [message, setMessage] = useState([]);
 
   //url for fetching messages
   const name = props.value.data[1];
@@ -35,28 +33,38 @@ export default function Details(props) {
   const draw = props.value.data[5];
 
   const getArtist = async (token) => {
-    const result = await fetch(
-      `https://api.spotify.com/v1/artists/${spotify}`,
-      {
-        method: "GET",
-        headers: { Authorization: "Bearer " + token },
-      }
-    );
-    const data = await result.json();
-    setData(data);
-  };
+    console.log(token)
+    try {
+      token = await(token)
+        const response = await fetch(
+          `https://api.spotify.com/v1/artists/${spotify}`,
+            {   mode: 'cors',
+                method: 'GET',
+                headers: {Accept: 'application/json', Authorization: "Bearer " + token},
+            }
+        );
+        const data = await response.json();
+        console.log(data);
+        setData(data);
+    } catch (err) {
+        console.log(err);
+    }
+};
 
   const getAlbums = async (token) => {
-    const result = await fetch(
+    try {
+    const response = await fetch(
       `https://api.spotify.com/v1/artists/${spotify}/albums`,
       {
+        mode: "cors",
         method: "GET",
-        headers: { Authorization: "Bearer " + token },
+        headers: { Accept: 'application/json', Authorization: "Bearer " + token },
       }
     );
-    const record = await result.json();
+    const record = await response.json();
     setAlbum(record);
   };
+
 
   useEffect(() => {
     getArtist(token);
