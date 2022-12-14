@@ -44,23 +44,25 @@ export default function Home() {
             <h1 className="self-center text-4xl text-sky-600 pt-8">
               BODY BELL RECORDS
             </h1>
-            <motion.svg
-              width="half"
-              height="none"
-              viewBox="0 0 600 10"
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.line
-                x1="100"
-                y1="0"
-                x2="500"
-                y2="0"
-                stroke="#0369a1"
-                variants={draw}
-                custom={2}
-              />
-            </motion.svg>
+            <div className="flex justify-center">
+              <motion.svg
+                width="400"
+                height="40"
+                viewBox="0 0 400 10"
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.line
+                  x1="0"
+                  y1="0"
+                  x2="400"
+                  y2="0"
+                  stroke="#0369a1"
+                  variants={draw}
+                  custom={2}
+                />
+              </motion.svg>
+            </div>
           </div>
         </div>
         <div>

@@ -19,7 +19,7 @@ const Top_Nav = () => {
   const [selectedPage, setSelectedPage] = useState(page[0]);
   return (
     <>
-      <div className="bg-neutral-200 flex justify-around md:justify-between">
+      <div className="bg-neutral-200 flex justify-center md:justify-between">
         <div className="flex ">
           <div className="relative w-60 rounded-full">
             <Image
@@ -42,10 +42,10 @@ const Top_Nav = () => {
             </Link>
           </motion.div>
         </div>
-        <div className="pr-4 ">
-          <div className="flex flex-row">
+        <div className="pr-4">
+          <div className="flex flex-row items-center">
             <Listbox value={selectedPage} onChange={setSelectedPage}>
-              <Listbox.Button className="pt-4  text-xl">
+              <Listbox.Button className="pt-5  text-xl">
                 Explore <FontAwesomeIcon icon={faWpexplorer} />
               </Listbox.Button>
               <Transition
